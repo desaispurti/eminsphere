@@ -4,11 +4,26 @@ import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", to: "/" },
-  { label: "Apply as Reviewer", to: "/apply-as-reviewer" },
-  { label: "Eminsphere's Innovation Challenge 2026", to: "/innovation-challenge-2026" },
 ];
 
 const moreLinks = [
+  { label: "Apply as Reviewer", to: "/apply-as-reviewer" },
+  { label: "Eminsphere's Innovation Challenge 2026", to: "/innovation-challenge-2026" },
+  { label: "Upcoming Conferences", heading: true },
+  { label: "ICAIST-26", to: "/icaist-26" },
+  { label: "ICMREF-26", to: "/icmref-26" },
+  { label: "ICAITS-26", to: "/icaits-26" },
+  { label: "ICATES-26", to: "/icates-26" },
+  { label: "Recent Conference proceedings", heading: true },
+  { label: "Proceeding ICAIDSS-2026", to: "/recent-conference-proceedings/copy-of-proceeding-icaeset-2026-26" },
+  { label: "Proceeding ICAESET-2026-26", to: "/recent-conference-proceedings/copy-of-proceeding-icnse-26" },
+  { label: "Proceeding ICNSE-26", to: "/recent-conference-proceedings/copy-of-proceeding-ictet-26" },
+  { label: "Proceeding ICTET-26", to: "/recent-conference-proceedings/copy-of-proceeding-icmess-26" },
+  { label: "Proceeding ICMESS-26", to: "/recent-conference-proceedings/copy-of-proceeding-icasit-26" },
+  { label: "Proceeding ICASIT-26", to: "/recent-conference-proceedings/proceeding-icasit-26" },
+  { label: "Proceeding ICMDIA-25", to: "/icmdia-25-1" },
+  { label: "Proceeding ICETSGC-25", to: "/proceeding-icetsgc-25" },
+  { label: "Proceeding ICCINET-25", to: "/conference-proceedings" },
   { label: "Recent conferences", heading: true },
   { label: "ICAIDSS-26", to: "/icaidss-26" },
   { label: "ICAESET-2026", to: "/icaeset-2026" },

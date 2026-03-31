@@ -12,16 +12,16 @@ interface GlimpseGallery {
 
 const galleries: GlimpseGallery[] = [
   {
-    title: "Glimpses of ICAESET-2026",
-    date: "15 March 2026",
+    title: "Glimpses of ICEEE-26",
+    date: "10 April 2026",
     layout: "scroll",
     images: [
-      "https://static.wixstatic.com/media/30814e_33d4e51ec9b548869dc79ff1d169efaa~mv2.png",
-      "https://static.wixstatic.com/media/30814e_5e715a3196b14d579d140d5b3eb1ddca~mv2.png",
-      "https://static.wixstatic.com/media/30814e_93a8f9332aef4c4aa7fd4f0e49546811~mv2.png",
-      "https://static.wixstatic.com/media/30814e_a9f31589b453419d80070cb9359201c8~mv2.png",
-      "https://static.wixstatic.com/media/30814e_d86d730b88634ffd973c45f6ce16ebeb~mv2.png",
-      "https://static.wixstatic.com/media/30814e_d7cee65f8eb14561ad4ef13530292baa~mv2.png",
+      "https://static.wixstatic.com/media/11062b_3e51224f3ee74964a141005767e8feb9~mv2.jpg/v1/fill/w_39,h_26,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/11062b_3e51224f3ee74964a141005767e8feb9~mv2.jpg",
+      "https://static.wixstatic.com/media/30814e_bd981344bf6d457cb5c1b3ad18e8b2a2~mv2.jpg/v1/fit/w_1366,h_670,q_90,enc_avif,quality_auto/30814e_bd981344bf6d457cb5c1b3ad18e8b2a2~mv2.jpg",
+      "https://static.wixstatic.com/media/30814e_df6ff84afa124774ae195216cf2b486d~mv2.jpg/v1/fit/w_1366,h_670,q_90,enc_avif,quality_auto/30814e_df6ff84afa124774ae195216cf2b486d~mv2.jpg",
+      "https://static.wixstatic.com/media/30814e_3afec8264edf435194c767f0bad090d9~mv2.jpg/v1/fit/w_1366,h_672,q_90,enc_avif,quality_auto/30814e_3afec8264edf435194c767f0bad090d9~mv2.jpg",
+      "https://static.wixstatic.com/media/30814e_c870b9a9cd7842379e9f5e9671c5d9a1~mv2.jpg/v1/fit/w_1366,h_674,q_90,enc_avif,quality_auto/30814e_c870b9a9cd7842379e9f5e9671c5d9a1~mv2.jpg",
+      "https://static.wixstatic.com/media/30814e_31285efa8b944137a276e7bd208a8eb3~mv2.jpg/v1/fit/w_1366,h_670,q_90,enc_avif,quality_auto/30814e_31285efa8b944137a276e7bd208a8eb3~mv2.jpg"
     ],
   },
   {
@@ -34,7 +34,7 @@ const galleries: GlimpseGallery[] = [
       "https://static.wixstatic.com/media/502b14_09e44ae6e60446d5a50f320be751f625~mv2.png",
       "https://static.wixstatic.com/media/502b14_3795a6d8c1e04913be8f9f278820b1f5~mv2.png",
       "https://static.wixstatic.com/media/502b14_a1d2cd32d08743ca8aff3aef4fa76139~mv2.png",
-      "https://static.wixstatic.com/media/502b14_4314189cd9e44cd680613f130b26535f~mv2.png",
+      "https://static.wixstatic.com/media/502b14_4314189cd9e44cd680613f130b26535f~mv2.png"
     ],
   },
   {
@@ -47,7 +47,20 @@ const galleries: GlimpseGallery[] = [
       "https://static.wixstatic.com/media/502b14_2eaed030e42b41cd83cd53cdfd2e7c08~mv2.png",
       "https://static.wixstatic.com/media/502b14_60fdae1f90e94ac9bc4c901d9d3fab98~mv2.png",
       "https://static.wixstatic.com/media/502b14_ec71360407204e648fac1ff35d41c712~mv2.png",
-      "https://static.wixstatic.com/media/502b14_c5b24e50b1a04652a81e622dfbc4101f~mv2.png",
+      "https://static.wixstatic.com/media/502b14_c5b24e50b1a04652a81e622dfbc4101f~mv2.png"
+    ],
+  },
+  {
+    title: "Glimpses of ICSET-26",
+    date: "20 January 2026",
+    layout: "scroll",
+    images: [
+      "https://static.wixstatic.com/media/502b14_76a9176ff6c4452c9a7207567ccb7834~mv2.jpeg/v1/fit/w_1366,h_768,q_90,enc_avif,quality_auto/502b14_76a9176ff6c4452c9a7207567ccb7834~mv2.jpeg",
+      "https://static.wixstatic.com/media/502b14_ae7cdcf8e2f54ce1885d30b49430b77d~mv2.jpeg/v1/fit/w_1366,h_768,q_90,enc_avif,quality_auto/502b14_ae7cdcf8e2f54ce1885d30b49430b77d~mv2.jpeg",
+      "https://static.wixstatic.com/media/502b14_329f2a5f116047dd9cd78a3470d1cc09~mv2.jpeg/v1/fit/w_1366,h_768,q_90,enc_avif,quality_auto/502b14_329f2a5f116047dd9cd78a3470d1cc09~mv2.jpeg",
+      "https://static.wixstatic.com/media/502b14_5a3559a66dad443499f4430147918d8f~mv2.jpeg/v1/fit/w_1366,h_768,q_90,enc_avif,quality_auto/502b14_5a3559a66dad443499f4430147918d8f~mv2.jpeg",
+      "https://static.wixstatic.com/media/502b14_9fc2a6030a854ee88ede55f78347f648~mv2.jpeg/v1/fit/w_1366,h_768,q_90,enc_avif,quality_auto/502b14_9fc2a6030a854ee88ede55f78347f648~mv2.jpeg",
+      "https://static.wixstatic.com/media/502b14_6928637d5b1d4474be607b49ff5bdee7~mv2.jpeg/v1/fit/w_1366,h_768,q_90,enc_avif,quality_auto/502b14_6928637d5b1d4474be607b49ff5bdee7~mv2.jpeg"
     ],
   },
   {
@@ -61,13 +74,12 @@ const galleries: GlimpseGallery[] = [
     ],
   },
   {
-    title: "Glimpses of ICASIT-26",
-    date: "Jan 25, 2026",
-    viewMoreLink: "https://www.eminsphere.com/icasit-26",
+    title: "Glimpses of ICAIDSS-26",
+    date: "Jan 12, 2026",
     layout: "pair",
     images: [
-      "https://static.wixstatic.com/media/502b14_0f3695fe750741d6915be39ecbc78771~mv2.png/v1/fit/w_1440,h_812,q_90/502b14_0f3695fe750741d6915be39ecbc78771~mv2.png",
-      "https://static.wixstatic.com/media/502b14_28332020eeb5428a8ca85edaaec7194a~mv2.png/v1/fit/w_1440,h_810,q_90/502b14_28332020eeb5428a8ca85edaaec7194a~mv2.png",
+      "https://static.wixstatic.com/media/502b14_03c6b197c8b54e999e2d052f9e59ef74~mv2.jpeg/v1/fit/w_1366,h_768,q_90,enc_avif,quality_auto/502b14_03c6b197c8b54e999e2d052f9e59ef74~mv2.jpeg",
+      "https://static.wixstatic.com/media/502b14_daef1d429f184a9e828b78d3917c77db~mv2.jpeg/v1/fit/w_1366,h_768,q_90,enc_avif,quality_auto/502b14_daef1d429f184a9e828b78d3917c77db~mv2.jpeg",
     ],
   },
   {
@@ -78,26 +90,6 @@ const galleries: GlimpseGallery[] = [
     images: [
       "https://static.wixstatic.com/media/30814e_ecea041355d84679ab1367bd82fa0ed5~mv2.jpeg/v1/fit/w_960,h_511,q_90/30814e_ecea041355d84679ab1367bd82fa0ed5~mv2.jpeg",
       "https://static.wixstatic.com/media/30814e_67e286d210b64a398b3806961cca6c6a~mv2.jpeg/v1/fit/w_960,h_473,q_90/30814e_67e286d210b64a398b3806961cca6c6a~mv2.jpeg",
-    ],
-  },
-  {
-    title: "Glimpses of ICETSGC-25",
-    date: "Nov 16, 2025",
-    viewMoreLink: "https://www.eminsphere.com/icetsgc-25",
-    layout: "pair",
-    images: [
-      "https://static.wixstatic.com/media/30814e_f60549ac90534778a5183cc470411dfd~mv2.jpeg/v1/fit/w_960,h_510,q_90/30814e_f60549ac90534778a5183cc470411dfd~mv2.jpeg",
-      "https://static.wixstatic.com/media/30814e_ea118ea29d6e4d09a3ff77e169672cac~mv2.jpeg/v1/fit/w_960,h_514,q_90/30814e_ea118ea29d6e4d09a3ff77e169672cac~mv2.jpeg",
-    ],
-  },
-  {
-    title: "Glimpses of ICCINET-25",
-    date: "October 25, 2025",
-    viewMoreLink: "https://www.eminsphere.com/iccinet-25",
-    layout: "pair",
-    images: [
-      "https://static.wixstatic.com/media/30814e_db76cb11be6e4658921b1416c4f002d1~mv2.jpg/v1/fit/w_960,h_511,q_90/30814e_db76cb11be6e4658921b1416c4f002d1~mv2.jpg",
-      "https://static.wixstatic.com/media/30814e_77308176719a49509143aca1d24d00c7~mv2.jpg/v1/fit/w_960,h_509,q_90/30814e_77308176719a49509143aca1d24d00c7~mv2.jpg",
     ],
   },
 ];

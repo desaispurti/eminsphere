@@ -18,6 +18,14 @@ const articles = [
     likes: 7,
     link: "https://www.eminsphere.com/post/shubham-bhaskar-thakare-s-award-winning-research-in-mechanical-systems-optimization",
   },
+  {
+    title: "Key Takeaways from Sambha Cha's Research Visit to Bangkok, Thailand",
+    excerpt: "Join us for an engaging conversation with Miss. Cha, a working professional in Thailand, as she shares her research experience.",
+    image: "https://static.wixstatic.com/media/30814e_f9c9c4c4b8e04a8e9d7c6b5a3e1f2d0a~mv2.jpeg/v1/fill/w_582,h_436,fp_0.50_0.50,q_90/30814e_f9c9c4c4b8e04a8e9d7c6b5a3e1f2d0a~mv2.webp",
+    views: 27,
+    likes: 7,
+    link: "https://www.eminsphere.com/post/key-takeaways-from-sambha-cha-s-research-visit-to-bangkok-thailand",
+  },
 ];
 
 const LatestArticles = () => {
@@ -27,7 +35,7 @@ const LatestArticles = () => {
         <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
           Latest Articles
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {articles.map((article, i) => (
             <motion.a
               key={article.title}
