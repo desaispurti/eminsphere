@@ -28,15 +28,17 @@ const ProceedingLayout = () => {
     <div className="min-h-screen bg-[#313B34] flex flex-col font-body">
       <Header />
 
-      {data.videos && data.videos.length > 0 ? (
-        <section className="w-full flex-1 py-16 px-4 md:px-8">
-          <div className="max-w-6xl mx-auto flex flex-col items-center">
-            <h2 className="text-3xl text-white font-display font-medium mb-4">{data.title.replace('Proceeding ', '')}</h2>
-            <p className="text-center text-sm text-gray-300 max-w-2xl mb-12">
-              A prestigious global platform bringing together researchers, engineers, scientists, and industry professionals to discuss cutting-edge innovations shaping the future of technology and engineering.
+      <main className="flex-1 w-full flex flex-col py-16 px-4 md:px-8">
+        <div className="max-w-6xl w-full mx-auto flex flex-col items-center">
+          <div className="text-center mb-12">
+            <h1 className="text-3xl text-white font-display font-bold mb-4">{data.title}</h1>
+            <p className="text-sm md:text-base text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              {data.description}
             </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+          {data.videos && data.videos.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mb-16">
               {data.videos.map((vid, i) => (
                 <div key={i} className="rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)] bg-black group relative aspect-video">
                   <iframe
@@ -51,16 +53,36 @@ const ProceedingLayout = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-      ) : (
-        <main className="flex-1 flex items-center justify-center py-24 px-4">
-          <div className="text-center">
-            <h1 className="text-3xl text-white font-display font-bold mb-4">{data.title}</h1>
-            <p className="text-gray-300">{data.description}</p>
-          </div>
-        </main>
-      )}
+          )}
+
+          {data.papers && data.papers.length > 0 && (
+            <div className="w-full flex flex-col gap-4">
+              {data.papers.map((paper, idx) => (
+                <div key={idx} className="bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-white/10 w-full flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all hover:bg-black/60">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-white mb-2 leading-tight">{paper.title}</h3>
+                    <p className="text-[#A2E2C7] text-sm font-medium">{paper.authors}</p>
+                  </div>
+                  <a 
+                    href={paper.pdfLink} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="shrink-0 inline-flex items-center justify-center bg-white text-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap"
+                  >
+                    Click Here (PDF)
+                  </a>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {(!data.videos || data.videos.length === 0) && (!data.papers || data.papers.length === 0) && (
+            <div className="py-12 mt-4 text-center border border-white/5 bg-black/20 rounded-xl w-full max-w-2xl">
+              <p className="text-gray-400 italic">Papers and proceedings are currently being updated.</p>
+            </div>
+          )}
+        </div>
+      </main>
 
       <Footer />
     </div>

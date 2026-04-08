@@ -14,6 +14,7 @@ export interface ProceedingData {
   downloadLink?: string;
   abstractLink?: string;
   videos?: string[];
+  papers?: { title: string; authors: string; pdfLink: string; }[];
 }
 
 export const upcomingConferences: Record<string, ConferenceData> = {
@@ -94,21 +95,103 @@ export const proceedings: Record<string, ProceedingData> = {
     id: "icmdia-25-1",
     title: "Proceeding ICMDIA-25",
     date: "2025",
-    description: "Multidisciplinary Innovations and Applications proceeding papers published during the December 2025 event.",
-    videos: []
+    description: "The International Conference on Multidisciplinary Developments in Innovation and Advancement (ICMDIA-25), held on December 14, 2025, successfully brought together researchers, academicians, and industry experts from across the globe. The conference featured insightful keynote sessions, technical presentations, and engaging discussions, highlighting emerging trends, innovative ideas, and interdisciplinary collaboration. ICMDIA-25 served as a dynamic platform for knowledge exchange and global academic networking.",
+    videos: ["CEc9Jsc_kCc", "cRawYUUGvfE", "sK4t6-_YA0M", "WabTO7zXvWQ", "1lmwe5oqGxU", "-tWPmWroZmY", "KNRVvkplZtA", "cA1B82hXh8I", "jsaNkjwExeQ", "JyBorQ10xbA", "-FNVs3CNVwQ", "TFzKCm8tyns"]
   },
   "proceeding-icetsgc-25": {
     id: "proceeding-icetsgc-25",
     title: "Proceeding ICETSGC-25",
     date: "2025",
-    description: "Proceeding papers from the International Conference on Emerging Tech.",
-    videos: []
+    description: "We are pleased to officially launch the Conference Proceedings of the International Conference on Emerging Technologies, Sustainability, and Global Collaboration (ICETSGC-25). This compilation brings together high-quality research papers, keynote contributions, and innovative ideas presented by scholars, academicians, and industry experts from around the world. The proceedings reflect the conference’s commitment to fostering global collaboration, advancing sustainable technological solutions, and promoting impactful research across diverse domains. We extend our sincere appreciation to all contributors, reviewers, and participants for their valuable efforts in making this publication a significant milestone in the ICETSGC series.",
+    videos: ["9Mo2hFyA9Jk", "F6JSF4hOASA", "ombTUtaHuWA", "paKzapZAkC4", "5dpDefLhDDk"]
   },
   "conference-proceedings": {
     id: "conference-proceedings",
     title: "Proceeding ICCINET-25",
     date: "2025",
-    description: "Computational Intelligence and Networks symposium official peer-reviewed abstracts and papers.",
-    videos: []
+    description: "The International Conference on Computational Intelligence and Emerging Technologies (ICCINET-25), held on October 25, 2025, proudly announces the official launch of its conference proceedings. The proceedings comprise a collection of peer-reviewed research papers presented during the conference, highlighting the latest advancements, innovative methodologies, and emerging applications in computational intelligence, machine learning, and smart technologies. This publication reflects the collaborative efforts of researchers, academicians, and industry experts from across the globe, contributing to the growing body of knowledge in intelligent systems and emerging technologies.",
+    videos: ["ALLLQmylkLo", "t_0RhQn7Esw", "RJo9N0ciMF4", "v8dKQ--66qk", "7fUH0kegnu0", "Y1lMMQOjvPo", "NFuRe39dIl4", "xROSdLVB-_A"],
+    papers: [
+      {
+        title: "An Exploration of Game-Based Learning and Incidental Learning",
+        authors: "Gaura Kumar Gupta, Shubhangi Sachin Pharande",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_61dfcc3a38164d7c8c60e54efe7e41ea.pdf?index=true"
+      },
+      {
+        title: "Sustainable Digital Transformation: Ethics and Security in Smart Organizations",
+        authors: "Dr. Mrunal Pandit, Ashwini Mohite, Dr. Tanaji Dabade",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_77cd07b51ae7481790323616b9fc8f62.pdf?index=true"
+      },
+      {
+        title: "Artificial Intelligence and Machine Learning: Foundations, Applications, and Future Directions",
+        authors: "Dr. Shaikh Abdul Waheed, Prof. Vrushali More, Prof. Indranil Mukherjee",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_84c6325a69d640eeb23d596c6957ec5e.pdf?index=true"
+      },
+      {
+        title: "Embodied Multimodal Artificial Intelligence for Real Time Physical Interaction",
+        authors: "Pallavi Shingade, Mr. Rakesh Ramakrishna Pai, Dileep Kumar Pandiya",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_0ef09a31c4264e5298e7eafe785e530e.pdf"
+      },
+      {
+        title: "Design of Artificial Intelligence Sensors Using Physics Tools",
+        authors: "Dr. Tushar Jagdale, Shital Dhaigude, Dr S A Patil",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_8f152363b8b74f61bb5722b301e4f64c.pdf"
+      },
+      {
+        title: "Smart Healthcare Assistant: AI Powered Chatbot For Remote Medical Support and Guidance.",
+        authors: "Miss.Pawar Vrushali Subhash, Dr.D.B. Hanchate, Dr.S. S.Bere",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_4bd161e7b9744d53b83e4b55c71eef94.pdf"
+      },
+      {
+        title: "Deep Learning Approaches for Predicting Student Academic Performance in Higher Education",
+        authors: "Poornima Vishal Bhumkar, Dr.Suhas Pakhare, Ramesh Kakade, Pratik Mandlik, Dr. Tanaji Dabade",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_d886379f59794c5a96cc41e4179c3ae9.pdf"
+      },
+      {
+        title: "A Computational Performance Analysis of Artificial Intelligence Models for Classification Tasks",
+        authors: "Rohit Sunil Dhende",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_c871804bb98a44d180571d2dc43ca26e.pdf"
+      },
+      {
+        title: "Leveraging Databases to Enhance Business Intelligence (BI) and Statistical Accuracy (SA)",
+        authors: "Shubhangi Sachin Pharande, Gaurav Kumar Gupta, Dr. Tanaji Dabade",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_72507c3662fc452e99948ba44970a626.pdf?index=true"
+      },
+      {
+        title: "Artificial Intelligence in the Construction Industry and Its Role in Building a Sustainable Future",
+        authors: "Dr Sambhaji Patil, Dr. Ushadevi Patil, Prof. Salunkhe Abhijit Ashok, Dr Neha Patil",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_336e9096d9294e7183d2758f3cafa5cf.pdf"
+      },
+      {
+        title: "Advancements and Applications of Artificial Intelligence: A Data-Driven Analysis",
+        authors: "Neelam Jain, Dr. Dikshendra Sarpate, Vatsala Priya Indramohan, Prof.Pranjali N. Kharate, Deepak K. Sharma",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_8384e12d3df34505a5fc99ea633d88a3.pdf"
+      },
+      {
+        title: "EBG for wireless communication",
+        authors: "Pooja Kailas Raut, Dr. mrs.Vaishali M. Dhede, Dr. Rahul M. Muljakar",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_5008d902f5634160a6b828624e2a763d.pdf"
+      },
+      {
+        title: "Design & optimization of AI-Integrated Devices using Physics Tools: A Review",
+        authors: "Miss Shital Dhaigude, Dr Tushar Jagdale",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_54694b05b76d41feb26b384ecc4bf822.pdf"
+      },
+      {
+        title: "Harnessing AI for Competitive Advantage in Marketing Management: A Futuristic Perspective",
+        authors: "Amruta Kale Jadhav, Dipali Dhumal Jadhav, Seema Jadhav Pagare, Dr. Tanaji Dabade",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_5979e9af3f5d40eab642d07ea2366032.pdf"
+      },
+      {
+        title: "AI and the Future of Education: Disruptions, Dilemmas and Directions",
+        authors: "Mouhssin AIT EL MOUDEN, Bani KOUMACHI, Ali AIT SI MHAMED, Moulay Sadik MALIKI, Lahcen AIT IDIR",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_0cab9a8e6a074fdd84161cf9c14b8888.pdf"
+      },
+      {
+        title: "An Analytical Review of Issues and Growth Prospects of Migrated Students from Satara to Pune",
+        authors: "Sandhya Vijay Sankpal, Dr. Vishal Pandurang Deshmukh",
+        pdfLink: "https://www.eminsphere.com/_files/ugd/30814e_da52d8b1002947c887a06378a1aef80b.pdf"
+      }
+    ]
   }
 };
