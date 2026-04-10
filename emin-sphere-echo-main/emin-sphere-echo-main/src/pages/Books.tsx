@@ -32,14 +32,40 @@ const Books = () => {
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-display text-4xl md:text-5xl font-bold text-white">
             Books
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-white/70 font-body mt-4">
-            Publications by Eminsphere™
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-white/70 font-body mt-4 max-w-2xl mx-auto">
+            Eminsphere™ publishes hands-on, peer-reviewed technical books in AI, Cloud, Systems & Technology — built for academia and industry.<br className="hidden md:block"/>
+            Generative Thinking meets Rigorous Engineering.
           </motion.p>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="text-white bg-white/10 px-6 py-2 rounded-full border border-white/20">100+ Titles</div>
+            <div className="text-white bg-white/10 px-6 py-2 rounded-full border border-white/20">12 Countries</div>
+            <div className="text-white bg-white/10 px-6 py-2 rounded-full border border-white/20">500k Readers</div>
+          </motion.div>
         </div>
       </section>
 
       <section className="py-16 md:py-20 bg-background">
         <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="bg-card p-6 rounded-xl border border-border text-center shadow-sm">
+              <h3 className="font-display font-bold text-xl mb-3">Academic Rigor</h3>
+              <p className="text-muted-foreground font-body">Peer-reviewed, research-grade content.</p>
+            </div>
+            <div className="bg-card p-6 rounded-xl border border-border text-center shadow-sm">
+              <h3 className="font-display font-bold text-xl mb-3">Global Reach</h3>
+              <p className="text-muted-foreground font-body">Worldwide ISBN distribution. Our books are globally accessible and officially available on Amazon.</p>
+            </div>
+            <div className="bg-card p-6 rounded-xl border border-border text-center shadow-sm">
+              <h3 className="font-display font-bold text-xl mb-3">Premium Design</h3>
+              <p className="text-muted-foreground font-body">Modern layouts & visual clarity.</p>
+            </div>
+          </div>
+          <div className="flex justify-center gap-4 mb-12">
+             <button className="bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity font-body">Explore Catalog</button>
+             <button className="bg-secondary text-secondary-foreground font-semibold px-8 py-3 rounded-lg hover:bg-secondary/80 transition-opacity font-body">Become an Author</button>
+          </div>
+
+          <h2 className="font-display text-3xl font-bold text-center mb-10">Our Catalog</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
             {bookImages.map((img, i) => (
               <motion.div
