@@ -153,9 +153,20 @@ const RecentConferenceLayout = () => {
                     transition={{ delay: i * 0.05 }}
                     className="bg-card/60 hover:bg-card/90 transition-all border border-border/50 p-6 rounded-2xl group hover:shadow-xl hover:-translate-y-1"
                   >
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                      <GraduationCap className="w-7 h-7" />
-                    </div>
+                    {speaker.imageUrl ? (
+                      <div className="mb-4 overflow-hidden rounded-xl border border-border/60 bg-muted/20">
+                        <img
+                          src={speaker.imageUrl}
+                          alt={speaker.name}
+                          loading="lazy"
+                          className="w-full h-48 object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <GraduationCap className="w-7 h-7" />
+                      </div>
+                    )}
                     <h4 className="font-display font-bold text-lg text-foreground mb-1">{speaker.name}</h4>
                     <p className="text-sm text-primary/80 font-medium mb-1">{speaker.title}</p>
                     <p className="text-sm text-muted-foreground">{speaker.affiliation}</p>
@@ -240,6 +251,34 @@ const RecentConferenceLayout = () => {
               </motion.div>
             );
           })()}
+
+          {data.importantDates && data.importantDates.length > 0 && (
+            <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <div className="text-center mb-10">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-widest text-accent border border-accent/20 rounded-full bg-accent/5">
+                  <Calendar className="w-4 h-4" />
+                  Schedule
+                </span>
+                <h3 className="font-display text-3xl font-bold text-foreground">Important Dates</h3>
+                <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">Key submission and event deadlines for the conference.</p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {data.importantDates.map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    className="rounded-2xl border border-primary/20 bg-primary/5 p-5 shadow-sm"
+                  >
+                    <p className="text-sm font-semibold text-foreground">{item.label}</p>
+                    <p className="mt-2 text-base font-bold text-primary">{item.date}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.section>
+          )}
 
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

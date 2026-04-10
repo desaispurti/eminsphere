@@ -49,7 +49,7 @@ const App = () => (
           <Route path="/innovation-challenge-2026" element={<InnovationChallenge />} />
           
           {/* Recent conference pages */}
-          <Route path="/icaeset-2026" element={<RecentConferenceLayout />} />
+          <Route path="/icaest-2026" element={<RecentConferenceLayout />} />
           <Route path="/icnse-26" element={<RecentConferenceLayout />} />
           <Route path="/ictet-26" element={<RecentConferenceLayout />} />
           <Route path="/icmess-26" element={<RecentConferenceLayout />} />
@@ -65,10 +65,13 @@ const App = () => (
           <Route path="/icenta-2024" element={<RecentConferenceLayout />} />
           <Route path="/iceiis24" element={<RecentConferenceLayout />} />
           <Route path="/icaids-2024" element={<RecentConferenceLayout />} />
+          <Route path="/icaest-2026" element={<RecentConferenceLayout />} />
+          <Route path="/icqadts-2026" element={<RecentConferenceLayout />} />
 
           {/* Upcoming conference pages */}
           <Route path="/upcomming-confernces" element={<UpcomingConferences />} />
           <Route path="/icaist-26" element={<UpcomingConferenceLayout />} />
+          <Route path="/icqadts-2026" element={<UpcomingConferenceLayout />} />
           <Route path="/icmref-26" element={<UpcomingConferenceLayout />} />
           <Route path="/copy-of-icmref-26" element={<UpcomingConferenceLayout />} />
           <Route path="/icaits-26" element={<UpcomingConferenceLayout />} />

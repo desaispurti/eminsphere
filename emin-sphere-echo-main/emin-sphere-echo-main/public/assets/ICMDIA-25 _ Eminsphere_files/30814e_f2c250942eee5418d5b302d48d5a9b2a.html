@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)https://www-eminsphere-com.filesusr.com/html/30814e_f2c250942eee5418d5b302d48d5a9b2a.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICMDIA-25 | International Conference on Multidisciplinary Developments in Innovation and Advancement</title>
+<link href="./css2" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Lato', sans-serif; background-color: #eef3fb; color: #333; }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #1a237e, #0d47a1, #1976d2);
+    color: white;
+    text-align: center;
+    padding: 150px 20px 120px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.2);
+  }
+  .floating-shapes {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .shape {
+    position: absolute;
+    width: 80px; height: 80px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20%;
+    animation: float 8s infinite ease-in-out;
+  }
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-25px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .hero-content { position: relative; z-index: 2; }
+  .hero h1 { font-family: 'Poppins', sans-serif; font-size: 3.4em; margin-bottom: 15px; letter-spacing: 1px; }
+  .hero p { font-size: 1.25em; margin-bottom: 12px; }
+  .hero .button {
+    background: #ffeb3b;
+    color: #212121;
+    padding: 16px 45px;
+    border-radius: 35px;
+    display: inline-block;
+    margin-top: 25px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .hero .button:hover { background: #fbc02d; transform: translateY(-3px); }
+
+  /* Sections */
+  section { padding: 80px 20px; text-align: center; }
+  section h2 { font-family: 'Poppins', sans-serif; color: #0d47a1; font-size: 2.2em; margin-bottom: 20px; }
+  section p { max-width: 900px; margin: 10px auto; line-height: 1.7; }
+
+  /* Cards Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+  }
+  .card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #bbdefb;
+  }
+  .card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.18); }
+  .card h3 { font-family: 'Poppins', sans-serif; color: #1976d2; margin-bottom: 10px; }
+  .card p { color: #444; }
+
+  /* Timeline */
+  .timeline {
+    display: flex;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 25px;
+    padding: 20px 10px;
+    scroll-behavior: smooth;
+  }
+  .timeline-item {
+    min-width: 230px;
+    background: #c5cae9;
+    border-radius: 15px;
+    padding: 25px 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    border-left: 6px solid #3949ab;
+  }
+  .timeline-item h4 {
+    font-size: 1.15em;
+    font-weight: 700;
+    color: #1a237e;
+    margin-bottom: 8px;
+  }
+  .timeline-item p { color: #222; font-weight: 500; }
+
+  /* Video Section */
+  .video-section { margin-top: 60px; }
+  .video-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .video-wrapper iframe {
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 420px;
+    height: 240px;
+  }
+
+  /* Call to Action */
+  .cta {
+    background: linear-gradient(135deg, #1a237e, #283593);
+    color: white;
+    padding: 90px 20px;
+  }
+  .cta h2 { color: white; font-size: 2.3em; margin-bottom: 20px; }
+  .cta .button {
+    background: #ffeb3b;
+    color: #1b1b1b;
+    padding: 15px 45px;
+    border-radius: 30px;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .cta .button:hover { background: #fbc02d; transform: scale(1.05); }
+
+  footer {
+    background: #1a237e;
+    color: #eee;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="floating-shapes">
+    <div class="shape" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+    <div class="shape" style="top: 50%; left: 80%; animation-delay: 1s;"></div>
+    <div class="shape" style="top: 70%; left: 30%; animation-delay: 2s;"></div>
+  </div>
+
+  <div class="hero-content">
+    <h1>ICMDIA-25</h1>
+    <p>International Conference on Multidisciplinary Developments in Innovation and Advancement</p>
+    <p><strong>Helsinki, Finland | December 14, 2025 | Hybrid Mode</strong></p>
+
+    <!-- ISBN Added -->
+    <p style="font-weight:600; font-size:1.15em; margin-top:5px;">
+      ISBN Number : 978-81-994624-6-5
+    </p>
+
+    <p>Organized by: <strong>Eminsphere™</strong> | 
+       Email: <a href="mailto:info@eminsphere.com" style="color:#fff;">info@eminsphere.com</a>
+    </p>
+
+    <a href="https://forms.gle/TBhdH7gPF4Y3wrxb7" class="button" target="_blank">Register Now</a>
+    <a href="https://www-eminsphere-com.filesusr.com/html/30814e_f2c250942eee5418d5b302d48d5a9b2a.html#objectives" class="button" style="background:#fff; color:#0d47a1; margin-left:10px;">Explore Tracks</a>
+  </div>
+</section>
+
+<!-- About -->
+<section>
+  <h2>About the Conference</h2>
+  <p>The ICMDIA-25 unites researchers, scholars, and professionals from around the world to promote interdisciplinary innovation and sustainable advancement. This global forum fosters collaboration across engineering, technology, management, environmental sciences, social innovation, and AI-driven transformation.</p>
+</section>
+
+<!-- Tracks -->
+<section id="objectives">
+  <h2>Conference Tracks &amp; Objectives</h2>
+  <div class="grid">
+    <div class="card"><h3>Engineering &amp; Technology</h3><p>AI, IoT, Cybersecurity, Smart Systems, Data Engineering</p></div>
+    <div class="card"><h3>Business &amp; Management</h3><p>Digital transformation, sustainability strategies, and global trade</p></div>
+    <div class="card"><h3>Environmental &amp; Sustainable Sciences</h3><p>Climate resilience, renewable resources, and green innovation</p></div>
+    <div class="card"><h3>Computing &amp; Artificial Intelligence</h3><p>Machine learning, robotics, autonomous systems, and data ethics</p></div>
+    <div class="card"><h3>Social Innovation &amp; Humanities</h3><p>Ethics, education, digital inclusion, governance, and policy studies</p></div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section>
+  <h2>Important Dates</h2>
+  <div class="timeline">
+    <div class="timeline-item"><h4>Abstract Submission</h4><p>November 10, 2025</p></div>
+    <div class="timeline-item"><h4>Full Paper Submission</h4><p>November 20, 2025</p></div>
+    <div class="timeline-item"><h4>Acceptance Notification</h4><p>November 28, 2025</p></div>
+    <div class="timeline-item"><h4>Registration Deadline</h4><p>December 3, 2025</p></div>
+    <div class="timeline-item"><h4>Conference Date</h4><p>December 14, 2025</p></div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta">
+  <h2>Join ICMDIA-25 and Be Part of Global Innovation</h2>
+  <p>Register now to submit your research, attend sessions, and engage with global experts.</p>
+
+  <a href="https://forms.gle/TBhdH7gPF4Y3wrxb7" class="button" target="_blank">Click Here to Register</a>
+</section>
+
+
+
+</body></html>

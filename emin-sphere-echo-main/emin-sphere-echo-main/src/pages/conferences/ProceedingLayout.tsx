@@ -3,6 +3,41 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { proceedings } from "@/data/eminsphereData";
 
+const getYouTubeVideoId = (value: string): string | null => {
+  const input = value.trim();
+  if (!input) return null;
+
+  // Already a plain 11-char YouTube video id.
+  if (/^[a-zA-Z0-9_-]{11}$/.test(input)) {
+    return input;
+  }
+
+  try {
+    const url = new URL(input);
+    const host = url.hostname.replace(/^www\./, "").toLowerCase();
+
+    if (host === "youtu.be") {
+      const id = url.pathname.split("/").filter(Boolean)[0] || "";
+      return /^[a-zA-Z0-9_-]{11}$/.test(id) ? id : null;
+    }
+
+    if (host === "youtube.com" || host === "m.youtube.com") {
+      const v = url.searchParams.get("v") || "";
+      if (/^[a-zA-Z0-9_-]{11}$/.test(v)) return v;
+
+      const parts = url.pathname.split("/").filter(Boolean);
+      const embedIndex = parts.findIndex((part) => part === "embed" || part === "shorts" || part === "live");
+      if (embedIndex >= 0 && parts[embedIndex + 1] && /^[a-zA-Z0-9_-]{11}$/.test(parts[embedIndex + 1])) {
+        return parts[embedIndex + 1];
+      }
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+};
+
 const ProceedingLayout = () => {
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
@@ -39,11 +74,17 @@ const ProceedingLayout = () => {
 
           {data.videos && data.videos.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mb-16">
-              {data.videos.map((vid, i) => (
+              {data.videos.map((vid, i) => {
+                const videoId = getYouTubeVideoId(vid);
+                if (!videoId) {
+                  return null;
+                }
+
+                return (
                 <div key={i} className="rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)] bg-black group relative aspect-video">
                   <iframe
                     className="w-full h-full absolute inset-0"
-                    src={`https://www.youtube.com/embed/${vid}?rel=0`}
+                    src={`https://www.youtube.com/embed/${videoId}?rel=0`}
                     title={`Conference Video ${i+1}`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -51,7 +92,8 @@ const ProceedingLayout = () => {
                   />
                   <div className="absolute inset-0 pointer-events-none border border-white/10 rounded-xl" />
                 </div>
-              ))}
+                );
+              })}
             </div>
           )}
 

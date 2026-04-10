@@ -1,3 +1,14 @@
+export interface CompanyInfo {
+  name: string;
+  tagline: string;
+  logo: string;
+  trademarkInfo?: {
+    applicationNo: string;
+    act: string;
+  };
+  certifications: { name: string; badge: string; description?: string; }[];
+}
+
 export interface ConferenceData {
   id: string;
   title: string;
@@ -18,6 +29,22 @@ export interface ProceedingData {
   videos?: string[];
   papers?: { title: string; authors: string; pdfLink: string; }[];
 }
+
+export const companyInfo: CompanyInfo = {
+  name: "Eminsphere™",
+  tagline: "Global Academic, Research & Innovation Platform",
+  logo: "/assets/company logo .png",
+  trademarkInfo: {
+    applicationNo: "7244652",
+    act: "Applied for under the Trade Marks Act, 1999 (Sec 18(1))"
+  },
+  certifications: [
+    {
+      name: "ISO 9001:2015 Certified",
+      badge: "/assets/iso usab.jpg"
+    }
+  ]
+};
 
 export const upcomingConferences: Record<string, ConferenceData> = {
   "icaist-26": {
@@ -109,7 +136,16 @@ export const proceedings: Record<string, ProceedingData> = {
     title: "Proceeding ICAIDSS-2026",
     date: "2026",
     description: "Official proceedings from the International Conference on Artificial Intelligence and Data Science Solutions.",
-    videos: ["kFzPzREp8jY", "bS89z9hQ63s", "dEw9B-i-T1M", "P6h5Vz6f_2M"]
+    videos: [
+      "https://youtu.be/5FesuF9NCsA?si=dGvSfg_JP_N5Acoz",
+      "https://youtu.be/7gOZPwm2ofs?si=dRRNCYZ_NpllBsFH",
+      "https://youtu.be/STRttiIu_Yk?si=AFXiRTr6EDYqoA2G",
+      "https://youtu.be/IC1OsPGVGsc?si=tni84cgtvvBfKt6Q",
+      "https://youtu.be/Em0Haiohr5g?si=eF4uwc4pGyX6DPz-",
+      "https://youtu.be/-YYG4z0ZjM8?si=zhrjZGTuUMJJ_ZPb",
+      "https://youtu.be/Ty_rUYeDdks?si=6flNYgBm805Ec7Yr",
+      "https://youtu.be/ajY0Y0PlC_I?si=A28sx0BUM2Xs6jsb"
+    ]
   },
   "copy-of-proceeding-icnse-26": {
     id: "copy-of-proceeding-icnse-26",
@@ -159,6 +195,34 @@ export const proceedings: Record<string, ProceedingData> = {
     date: "2025",
     description: "We are pleased to officially launch the Conference Proceedings of the International Conference on Emerging Technologies, Sustainability, and Global Collaboration (ICETSGC-25). This compilation brings together high-quality research papers, keynote contributions, and innovative ideas presented by scholars, academicians, and industry experts from around the world. The proceedings reflect the conference’s commitment to fostering global collaboration, advancing sustainable technological solutions, and promoting impactful research across diverse domains. We extend our sincere appreciation to all contributors, reviewers, and participants for their valuable efforts in making this publication a significant milestone in the ICETSGC series.",
     videos: ["9Mo2hFyA9Jk", "F6JSF4hOASA", "ombTUtaHuWA", "paKzapZAkC4", "5dpDefLhDDk"]
+  },
+  "icamet25": {
+    id: "icamet25",
+    title: "Proceeding ICAMET 2025",
+    date: "2025",
+    description: "International Conference on AI, Management, Engineering, and Technology (ICAMET 2025) held in Pune, India at Genba Sopanrao Moze College of Engineering, an accredited institution approved by AICTE and affiliated to Savitribai Phule Pune University. ISBN Number: 978-93-342-5206-4.",
+    videos: []
+  },
+  "icenta-2024": {
+    id: "icenta-2024",
+    title: "Proceeding ICENTA-2024",
+    date: "2024",
+    description: "International Conference on Engineering Nexus & Technological Advancements 2024 (ICENTA-2024) held in Mitte, Berlin, Germany. Theme: Bridging Innovation & Technology for a Smarter Future. ISBN Number: 978-93-342-5598-0. ISBN-13: 979-8314318546. Date: December 15-16, 2024. Mode: Virtual (Global Participation). Organized by Eminsphere.",
+    videos: []
+  },
+  "iceiis24": {
+    id: "iceiis24",
+    title: "Proceeding ICEIIS-2024",
+    date: "2024",
+    description: "International Conference on Edge AI & Intelligent Infrastructure Systems (ICEIIS-2024), focused on the deployment of intelligent systems at the edge, integrating AI with real-world infrastructure including smart cities, industrial automation, and IoT ecosystems. Date: 04 Feb 2024 | Virtual. The conference explores real-time intelligent systems operating under constrained environments, enabling scalable, energy-efficient, and adaptive infrastructure solutions.",
+    videos: []
+  },
+  "icaids-2024": {
+    id: "icaids-2024",
+    title: "Proceeding ICAIDS-2024",
+    date: "2024",
+    description: "International Conference on Autonomous AI & Distributed Intelligence Systems (ICAIDS-2024), bringing together researchers and practitioners exploring scalable artificial intelligence, multi-agent systems, and distributed intelligent architectures. Date: 10 March 2024 | Virtual Mode. The conference focuses on decentralized decision-making, autonomous system coordination, and resilient AI infrastructures.",
+    videos: []
   },
   "conference-proceedings": {
     id: "conference-proceedings",

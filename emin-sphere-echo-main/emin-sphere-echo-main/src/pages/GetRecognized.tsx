@@ -19,26 +19,18 @@ const GetRecognized = () => {
 
       <section className="py-16 md:py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <img
-              src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=600&q=80"
-              alt="Awards Ceremony"
-              className="w-full md:w-1/2 rounded-lg shadow-md"
-              loading="lazy"
-            />
-            <div>
-              <h2 className="font-display text-3xl font-bold text-foreground mb-4">Nominate Excellence</h2>
-              <p className="text-muted-foreground font-body mb-6">
-                At EminSphere Global Academic Services, we value excellence across all fields. To recognize outstanding achievements in various areas, we invite you to nominate deserving individuals or institutions for our prestigious awards. Your nominations are essential in honoring those who have made significant contributions to education, innovation, business, community service, and more. Submit your nominations today and be a part of celebrating excellence across all domains.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="https://forms.gle/RqwR82qCYVr91JJg8" target="_blank" rel="noopener noreferrer" className="inline-block bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity font-body text-center">
-                  Submit Nominations
-                </a>
-                <a href="https://www.eminsphere.com/_files/ugd/30814e_db43285e8de64d61a5c2d0f1a47179d7.pdf" target="_blank" rel="noopener noreferrer" className="inline-block bg-secondary text-secondary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-secondary/80 transition-colors font-body text-center">
-                  EminSphere Global Innovation Awards 2025
-                </a>
-              </div>
+          <div>
+            <h2 className="font-display text-3xl font-bold text-foreground mb-4">Nominate Excellence</h2>
+            <p className="text-muted-foreground font-body mb-6">
+              At EminSphere Global Academic Services, we value excellence across all fields. To recognize outstanding achievements in various areas, we invite you to nominate deserving individuals or institutions for our prestigious awards. Your nominations are essential in honoring those who have made significant contributions to education, innovation, business, community service, and more. Submit your nominations today and be a part of celebrating excellence across all domains.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="https://forms.gle/RqwR82qCYVr91JJg8" target="_blank" rel="noopener noreferrer" className="inline-block bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity font-body text-center">
+                Submit Nominations
+              </a>
+              <a href="https://www.eminsphere.com/_files/ugd/30814e_db43285e8de64d61a5c2d0f1a47179d7.pdf" target="_blank" rel="noopener noreferrer" className="inline-block bg-secondary text-secondary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-secondary/80 transition-colors font-body text-center">
+                EminSphere Global Innovation Awards 2025
+              </a>
             </div>
           </div>
         </div>

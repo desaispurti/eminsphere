@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, Search, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { companyInfo } from "../data/eminsphereData";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -10,7 +11,7 @@ const moreLinks = [
   { label: "Apply as Reviewer", to: "/apply-as-reviewer" },
   { label: "Eminsphere's Innovation Challenge 2026", to: "/innovation-challenge-2026" },
   { label: "Upcoming Conferences", heading: true },
-  { label: "ICAIST-26", to: "/icaist-26" },
+  { label: "ICQADTS-2026", to: "/icaist-26" },
   { label: "ICMREF-26", to: "/icmref-26" },
   { label: "ICAITS-26", to: "/icaits-26" },
   { label: "ICATES-26", to: "/icates-26" },
@@ -54,6 +55,8 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const moreRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
@@ -74,32 +77,61 @@ const Header = () => {
   }, []);
 
   const linkItems = moreLinks.filter((l) => l.to);
+  const searchRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutsideSearch = (e: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setSearchOpen(false);
+      }
+    };
+    if (searchOpen) {
+      document.addEventListener("mousedown", handleClickOutsideSearch);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutsideSearch);
+  }, [searchOpen]);
 
   return (
     <header className="w-full" id="top">
       <div className="h-1 bg-primary" />
 
-      <div className="relative w-full h-36 md:h-40 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1600&q=80" alt="Academic background" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-card/80 via-card/60 to-card/40" />
-        <div className="relative z-10 h-full max-w-6xl mx-auto flex items-center justify-between px-4 md:px-8">
-          <Link to="/" className="flex items-center gap-4">
-            <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-card shadow-md flex items-center justify-center border-2 border-gold overflow-hidden">
-              <span className="font-display text-primary font-bold text-lg">E</span>
-            </div>
-            <div>
-              <h1 className="font-display text-2xl md:text-3xl font-bold text-foreground tracking-tight">Eminsphere™</h1>
-              <p className="text-sm text-muted-foreground font-body">Global Academic, Research & Innovation Platform</p>
-            </div>
+      <div className="relative w-full bg-white/95 backdrop-blur-sm py-6 md:py-8 border-b border-border">
+        <div className="relative z-10 max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 gap-4">
+          {/* Logo on Left */}
+          <Link to="/" className="flex-shrink-0">
+            <img src="/assets/company logo .png" alt="Eminsphere Logo" className="h-20 md:h-24 w-auto" />
           </Link>
-          <div className="hidden md:flex items-center gap-3 text-right">
-            <div>
-              <p className="text-sm font-semibold text-foreground">ISO 9001:2015 Certified</p>
-              <p className="text-xs text-muted-foreground">Quality Management System</p>
-              <p className="text-xs text-muted-foreground">Certification issued by an accredited certification body</p>
+
+          {/* Company Info Center */}
+          <div className="flex-1 text-center">
+            <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground tracking-tight">{companyInfo.name}</h1>
+            <p className="text-sm md:text-base text-muted-foreground font-body mt-1">{companyInfo.tagline}</p>
+          </div>
+
+          {/* Certifications on Right */}
+          <div className="flex-shrink-0 flex items-center gap-3 md:gap-4">
+            <div className="hidden md:flex flex-col text-right text-xs md:text-sm pr-3 border-r border-border">
+              <p className="font-semibold text-foreground">{companyInfo.certifications[0].name}</p>
+              <p className="text-muted-foreground text-xs">Quality Management System</p>
+              <p className="text-muted-foreground text-xs">Certification issued by an</p>
+              <p className="text-muted-foreground text-xs">accredited certification body</p>
             </div>
-            <div className="w-12 h-12 rounded bg-card shadow-sm flex items-center justify-center border border-border">
-              <span className="text-xs font-bold text-primary">ISO</span>
+            <div className="flex items-center gap-2">
+              {companyInfo.certifications.map((cert, idx) => (
+                <div key={idx} className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 flex items-center justify-center bg-card rounded shadow-sm border border-border p-1 hover:shadow-md transition">
+                  <img 
+                    src={cert.badge} 
+                    alt={cert.name} 
+                    title={cert.name}
+                    className="w-full h-full object-contain"
+                    onError={(e) => {
+                      const img = e.target as HTMLImageElement;
+                      img.style.display = "block";
+                      img.parentElement!.className += " bg-muted";
+                    }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -160,9 +192,58 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-2 text-muted-foreground">
-            <span className="text-sm">Search</span>
-            <Search className="w-4 h-4" />
+          <div className="relative">
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                setSearchOpen(!searchOpen);
+              }}
+              type="button"
+              className="hidden md:flex items-center gap-2 text-muted-foreground hover:text-foreground transition cursor-pointer px-3 py-2 rounded-md hover:bg-muted/50"
+            >
+              <span className="text-sm font-medium">Search</span>
+              <Search className="w-4 h-4" />
+            </button>
+
+            {searchOpen && (
+              <div ref={searchRef} className="absolute top-full right-0 mt-2 w-72 bg-card border border-border rounded-lg shadow-xl z-50">
+                <input
+                  type="text"
+                  placeholder="Search conferences, proceedings..."
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") {
+                      setSearchOpen(false);
+                      setSearchQuery("");
+                    }
+                  }}
+                  autoFocus
+                  className="w-full px-4 py-2 border-b border-border focus:outline-none bg-card text-foreground"
+                />
+                {searchQuery && (
+                  <div className="max-h-96 overflow-y-auto">
+                    {moreLinks
+                      .filter((l) => l.to && l.label.toLowerCase().includes(searchQuery.toLowerCase()))
+                      .map((link) => (
+                        <Link
+                          key={link.label}
+                          to={link.to!}
+                          onClick={() => {
+                            setSearchOpen(false);
+                            setSearchQuery("");
+                          }}
+                          className="block px-4 py-2.5 text-sm font-body text-foreground hover:bg-muted hover:text-primary transition"
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           <button className="md:hidden p-3 text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>

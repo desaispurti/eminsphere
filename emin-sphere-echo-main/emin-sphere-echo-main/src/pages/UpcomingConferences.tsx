@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const upcomingList = [
-  { name: "ICAIST-26", path: "/icaist-26", description: "International Conference on Artificial Intelligence and Smart Technologies", date: "10 April 2026" },
+  { name: "ICQADTS-2026", path: "/icaist-26", description: "International Conference on Quantum-AI Driven Autonomous Digital Twin Systems", date: "12 April 2026" },
   { name: "ICMREF-26", path: "/icmref-26", description: "International Conference on Multidisciplinary Research and Educational Frontiers", date: "25 March 2026" },
   { name: "ICAITS-26", path: "/copy-of-icmref-26", description: "International Conference on Advanced Information Technology and Systems", date: "14 May 2026" },
   { name: "ICATES-26", path: "/copy-of-icaits-26", description: "International Conference on Advanced Technologies and Engineering Solutions", date: "28 May 2026" },

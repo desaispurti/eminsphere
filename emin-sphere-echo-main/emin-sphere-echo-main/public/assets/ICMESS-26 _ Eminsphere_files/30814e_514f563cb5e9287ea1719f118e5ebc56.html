@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)https://www-eminsphere-com.filesusr.com/html/30814e_514f563cb5e9287ea1719f118e5ebc56.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICMESS-26 Conference | Eminsphere™</title>
+<link href="./css2" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --primary-dark: #0a1628;
+    --primary-blue: #1e3a5f;
+    --accent-orange: #ff6b35;
+    --accent-gold: #f7b731;
+    --text-dark: #2d3436;
+    --text-light: #636e72;
+    --bg-light: #f8f9fa;
+  }
+
+  body {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  section { 
+    padding: 90px 20px; 
+  }
+
+  h1, h2, h3, h4 { 
+    margin: 0 0 20px 0; 
+    font-weight: 700;
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 4.5em;
+    font-weight: 700;
+    letter-spacing: -2px;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--primary-dark);
+  }
+
+  h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--primary-blue);
+  }
+
+  p { 
+    margin: 15px 0; 
+    color: var(--text-light); 
+    line-height: 1.8;
+    font-size: 1.05em;
+  }
+
+  a { 
+    text-decoration: none; 
+    transition: all 0.3s ease;
+  }
+
+  .center { 
+    text-align: center; 
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 50%, #2c5282 100%);
+    color: white;
+    text-align: center;
+    padding: 160px 40px 140px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+      radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px),
+      radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    animation: float 20s ease-in-out infinite;
+    opacity: 0.3;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(45deg, transparent 30%, rgba(255, 107, 53, 0.1) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .hero h1 {
+    font-size: 5em;
+    margin-bottom: 25px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    line-height: 1.1;
+    animation: scaleIn 0.8s ease-out;
+    background: linear-gradient(to right, #ffffff, #f7b731, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite, scaleIn 0.8s ease-out;
+  }
+
+  .hero .subtitle {
+    font-size: 1.5em;
+    margin: 20px 0;
+    font-weight: 500;
+    opacity: 0;
+    letter-spacing: 1px;
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+    color: #ffffff;
+  }
+
+  .hero .conference-details {
+    font-size: 1.25em;
+    margin: 30px 0 15px;
+    opacity: 0;
+    font-weight: 400;
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .hero .conference-details span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 25px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .hero .conference-details span:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+  }
+
+  .hero .organizer {
+    font-size: 1.1em;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.9s forwards;
+  }
+
+  .hero .organizer a {
+    color: var(--accent-gold);
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .hero .organizer a:hover {
+    border-bottom-color: var(--accent-gold);
+  }
+
+  /* Button */
+  .button {
+    background: linear-gradient(135deg, var(--accent-orange) 0%, #e74c3c 100%);
+    color: #ffffff;
+    padding: 20px 55px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-top: 40px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1.2s forwards;
+  }
+
+  .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .button:hover::before {
+    left: 100%;
+  }
+
+  .button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.5);
+  }
+
+  /* About Section */
+  #about {
+    background: linear-gradient(to bottom, #ffffff 0%, var(--bg-light) 100%);
+    padding: 120px 40px;
+    position: relative;
+  }
+
+  #about .container {
+    max-width: 900px;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  #about h2 {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  #about p {
+    font-size: 1.2em;
+    line-height: 1.9;
+    color: var(--text-light);
+    margin: 25px 0;
+    animation: slideInRight 0.8s ease-out 0.2s backwards;
+  }
+
+  /* Conference Themes */
+  .themes-section {
+    padding: 120px 40px;
+    background: #ffffff;
+    position: relative;
+  }
+
+  .themes-section h2 {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 70px;
+  }
+
+  .card {
+    background: linear-gradient(135deg, #ffffff 0%, var(--bg-light) 100%);
+    border-radius: 20px;
+    padding: 45px 35px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+
+  .card:nth-child(1) { animation-delay: 0.1s; }
+  .card:nth-child(2) { animation-delay: 0.2s; }
+  .card:nth-child(3) { animation-delay: 0.3s; }
+  .card:nth-child(4) { animation-delay: 0.4s; }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-gold));
+    transform: scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+    transition: all 0.5s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-15px) rotate(-2deg);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-orange);
+  }
+
+  .card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .card:hover::after {
+    top: -50%;
+    left: -50%;
+  }
+
+  .card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 18px;
+    font-size: 1.6em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 1.05em;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Important Dates */
+  .dates-section {
+    padding: 120px 40px;
+    background: linear-gradient(135deg, var(--bg-light) 0%, #e8eef3 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dates-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.05) 0%, transparent 70%);
+    animation: float 15s ease-in-out infinite;
+  }
+
+  .dates-section h2 {
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .timeline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 70px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .timeline-item {
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+  .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+  .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+  .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+  .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, var(--accent-orange), var(--accent-gold));
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .timeline-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.25);
+  }
+
+  .timeline-item:hover::before {
+    opacity: 1;
+  }
+
+  .timeline-item h4 {
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+  }
+
+  .timeline-item p {
+    color: var(--accent-orange);
+    font-weight: 700;
+    font-size: 1.15em;
+    margin: 0;
+  }
+
+  /* Call to Action */
+  .cta-section {
+    padding: 140px 40px;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 50%, #2c5282 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+      radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px),
+      radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    animation: float 25s ease-in-out infinite;
+  }
+
+  .cta-section .container {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .cta-section h2 {
+    color: #ffffff;
+    font-size: 3.2em;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .cta-section p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.25em;
+    line-height: 1.9;
+    margin: 25px 0;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+  }
+
+  .cta-section .button {
+    background: linear-gradient(135deg, var(--accent-gold) 0%, #f39c12 100%);
+    color: var(--primary-dark);
+    font-size: 1.15em;
+    padding: 22px 60px;
+    margin-top: 45px;
+    box-shadow: 0 10px 35px rgba(247, 183, 49, 0.4);
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+  }
+
+  .cta-section .button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 45px rgba(247, 183, 49, 0.5);
+  }
+
+  /* Scroll Animations */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+  }
+
+  .scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 3em;
+      letter-spacing: 1px;
+    }
+
+    .hero .subtitle {
+      font-size: 1.2em;
+    }
+
+    .hero .conference-details {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    h2 {
+      font-size: 2.2em;
+    }
+
+    section {
+      padding: 70px 20px;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .timeline-item {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .cta-section h2 {
+      font-size: 2.3em;
+    }
+
+    .button {
+      padding: 18px 40px;
+      font-size: 1em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 120px 20px 100px;
+    }
+
+    .hero h1 {
+      font-size: 2.2em;
+    }
+
+    .button {
+      padding: 16px 35px;
+      font-size: 0.95em;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>ICMESS-26</h1>
+    <p class="subtitle"><strong>International Conference on Management, Economics, and Social Sciences</strong></p>
+    <p>Conference ISBN: <strong>978-81-996310-7-6</strong></p>
+
+    <div class="conference-details">
+      <span>📍 Kuala Lumpur, Malaysia</span>
+      <span>📅 February 8, 2026</span>
+      <span>🌐 Hybrid Mode</span>
+    </div>
+    <p class="organizer">Organized by: <strong>Eminsphere™</strong> | Email: 
+      <a href="mailto:info@eminsphere.com">info@eminsphere.com</a>
+    </p>
+    <a href="https://www-eminsphere-com.filesusr.com/html/30814e_514f563cb5e9287ea1719f118e5ebc56.html#about" class="button">Explore Conference</a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="center">
+  <div class="container">
+    <h2>About the Conference</h2>
+    <p>ICMESS-26 brings together global scholars, researchers, and professionals to share insights on emerging challenges and solutions in management, economics, and social sciences. The conference emphasizes sustainable development, digital innovation, and interdisciplinary collaboration for a connected world.</p>
+  </div>
+</section>
+
+<!-- Conference Themes -->
+<section class="themes-section center">
+  <div class="container">
+    <h2>Conference Themes and Tracks</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Business &amp; Management</h3>
+        <p>Corporate leadership, innovation strategies, and digital business ecosystems.</p>
+      </div>
+      <div class="card">
+        <h3>Economics &amp; Finance</h3>
+        <p>Global trade, sustainable growth, and intelligent financial systems.</p>
+      </div>
+      <div class="card">
+        <h3>Social Innovation</h3>
+        <p>Public policy, development studies, and societal transformation.</p>
+      </div>
+      <div class="card">
+        <h3>Human Capital &amp; Education</h3>
+        <p>Workforce evolution, learning systems, and inclusive global growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  <!-- ===== KEYNOTE SPEAKERS SECTION ===== -->
+<!-- ===== KEYNOTE SPEAKERS SECTION ===== -->
+<section id="keynote-speakers" style="padding:80px 20px; background:#f8f9fa;">
+
+  <div style="max-width:1200px; margin:auto;">
+
+    <h2 style="text-align:center; margin-bottom:50px;">
+      Keynote Speakers
+    </h2>
+
+    <!-- ===== RESPONSIVE GRID ===== -->
+    <div style="
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:40px;
+    ">
+
+<!-- ================= CARD 1 ================= -->
+<div class="speaker-card">
+
+  <div class="img-box">
+
+    <div class="badge">
+      ★ Stanford Top 2% Scientist
+    </div>
+
+    <img src="./30814e_68479290bb114146b46b56f021a75155~mv2.png">
+
+  </div>
+
+  <div class="info">
+    <h3>Dr. Nadia Adnan</h3>
+
+    <p class="highlight">
+      Stanford World's Top 2% Scientist
+    </p>
+
+    <p class="role">Assistant Professor &amp; Research Scientist</p>
+    <p>Management and Marketing</p>
+    <p>Prince Mohammad Bin Fahd University</p>
+
+    <p class="country">Saudi Arabia</p>
+  </div>
+
+</div>
+
+<!-- ================= CARD 2 ================= -->
+<div class="speaker-card">
+
+  <div class="img-box">
+
+    <img src="./502b14_e3b96c6fde384f0ba16dd14be8710af3~mv2.png">
+
+  </div>
+
+  <div class="info">
+    <h3>Dr. Ranà El Khawand</h3>
+
+    <p class="role">Technical Expert</p>
+
+    <p>Saida Risk Mapping Project</p>
+    <p>(UN-Habitat)</p>
+
+    <p class="country">UN HABITAT</p>
+  </div>
+
+</div>
+
+<!-- ================= CARD 3 ================= -->
+<div class="speaker-card">
+
+  <div class="img-box">
+
+    <img src="./502b14_0269601f3e7b4a9ba877aec373e7f5ee~mv2.png">
+
+  </div>
+
+  <div class="info">
+    <h3>Vijayachandar Sanikal</h3>
+
+    <p class="role">
+      IEEE Senior Member &amp; Independent Researcher
+    </p>
+
+    <p>AI-Driven Automotive</p>
+    <p>Digital Twin &amp; Simulation</p>
+
+    <p class="country">USA</p>
+  </div>
+
+</div>
+
+<!-- ================= CARD 4 ================= -->
+<div class="speaker-card">
+
+  <div class="img-box">
+
+    <img src="./502b14_89220e1abdb549c79f1981b88df127d0~mv2.png">
+
+  </div>
+
+  <div class="info">
+    <h3>Bhavya Mehta</h3>
+
+    <p class="role">Independent Researcher</p>
+
+    <p>Network Security</p>
+    <p>Cloud Networking</p>
+
+    <p class="country">USA</p>
+  </div>
+
+</div>
+
+<!-- ================= CARD 5 ================= -->
+<div class="speaker-card">
+
+  <div class="img-box">
+
+    <img src="./502b14_ec9a529cdc7c4e6e852442836e4fed51~mv2.png">
+
+  </div>
+
+  <div class="info">
+    <h3>Lawrence Mazaki Mashati</h3>
+
+    <p class="role">Community Development Professional</p>
+
+    <p>International Missionary for Christ Kenya (IMFC)
+
+
+    </p><p class="country">Nairobi, Kenya</p>
+  </div>
+
+</div>
+      
+     <!-- ================= CARD 6 ================= -->
+<div class="speaker-card">
+
+  <div class="img-box">
+    <img src="./30814e_bf66c69035bc4e41bc50c2345187c6f2~mv2.jpeg">
+  </div>
+
+  <div class="info">
+    <h3>Dr. Jitendra Pandey, FHEA</h3>
+
+    <p class="role">Senior Faculty Member</p>
+
+    <p>
+      Middle East College,<br>
+      Affiliated to Coventry University, United Kingdom
+    </p>
+
+    <p class="country">Oman</p>
+  </div>
+
+</div>
+<div class="speaker-card">
+
+  <div class="img-box">
+    <img src="./502b14_603e64a9735f4b8d844465896d5fba01~mv2.png">
+  </div>
+
+  <div class="info">
+    <h3>Mr. Satyabrata Pradhan</h3>
+
+    <p class="role">Automotive Engineer &amp; Program Leader
+</p>
+
+    <p>
+     IEEE Senior Member
+    </p>
+
+    <p class="country">USA</p>
+  </div>
+
+</div>
+
+
+<!-- ================= CARD 6 ================= -->
+<div class="speaker-card">
+
+  <div class="img-box">
+
+    <img src="./502b14_798238cd07c2464b8935f17ff4bc40be~mv2.png">
+
+  </div>
+
+  <div class="info">
+    <h3>Dr. Thillainayagam Sankaravel</h3>
+
+    <p class="role">President</p>
+
+    <p>MedArb International</p>
+   
+
+    <p class="country">India</p>
+  </div>
+
+</div>
+      <!-- ================= CARD 7 ================= -->
+<div class="speaker-card">
+
+  <div class="img-box">
+    <img src="./30814e_73060115e6b34cb882286565559ff5e2~mv2.jpeg">
+  </div>
+
+  <div class="info">
+    <h3>Dr. Walida Ounruean</h3>
+
+    <p class="role">International Education Ambassador</p>
+
+    <p>
+      Curriculum and Instruction,<br>
+      Faculty of Education, Uttaradit Rajabhat University
+    </p>
+
+    <p class="country">Thailand</p>
+  </div>
+
+</div>
+
+
+</div>
+</div>
+</section>
+
+<!-- ===== SPEAKER CARD STYLES ===== -->
+<style>
+
+.speaker-card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+  transition:0.4s;
+}
+
+.speaker-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 30px 70px rgba(0,0,0,0.15);
+}
+
+/* Image box */
+.img-box{
+  height:260px;
+  background:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.img-box img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+
+/* Badge */
+.badge{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:linear-gradient(135deg,#ff6b35,#f7b731);
+  color:white;
+  padding:8px 16px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:1px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  z-index:2;
+}
+
+/* Info */
+.info{
+  padding:25px;
+  text-align:center;
+}
+
+.info h3{
+  margin-bottom:10px;
+  color:#0a1628;
+}
+
+.highlight{
+  font-weight:700;
+  color:#ff6b35;
+}
+
+.role{
+  font-weight:600;
+  color:#1e3a5f;
+}
+
+.country{
+  color:#ff6b35;
+  font-weight:600;
+}
+
+</style>
+
+
+
+<!-- Important Dates -->
+<section class="dates-section center">
+  <div class="container">
+    <h2>Important Dates</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Abstract Submission</h4>
+        <p>January 5, 2026</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Full Paper Submission</h4>
+        <p>January 15, 2026</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Acceptance Notification</h4>
+        <p>January 25, 2026</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Final Registration</h4>
+        <p>January 30, 2026</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Conference Date</h4>
+        <p>February 8, 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section center">
+  <div class="container">
+    <h2>Join ICMESS-26 in Kuala Lumpur, Malaysia</h2>
+    <p>Participate in meaningful discussions that drive the evolution of management, economics, and social sciences in the digital age. Connect with a global network of thought leaders and innovators.</p>
+    <a href="https://forms.gle/AqVPo6TzjZ9mnLZt8" class="button" target="_blank">Submit Paper / Register</a>
+  </div>
+</section>
+
+
+</body></html>
