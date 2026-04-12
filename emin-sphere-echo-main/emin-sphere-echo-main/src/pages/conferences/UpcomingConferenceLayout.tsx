@@ -18,13 +18,15 @@ import { upcomingConferences } from "@/data/eminsphereData";
 
 const sectionTitleClass = "text-xl md:text-2xl font-display font-bold text-cyan-400";
 const sectionLeadClass = "max-w-5xl text-sm md:text-base leading-7 text-slate-200/85";
+const icqadtsAssetBase = "/assets/ICQADTS-2026%20_%20Eminsphere_files";
+const icqadtsAsset = (fileName: string) => `${icqadtsAssetBase}/${encodeURIComponent(fileName)}`;
+const icatesAssetBase = "/assets/ICATES-26%20_%20Eminsphere_files";
+const icatesAsset = (fileName: string) => `${icatesAssetBase}/${encodeURIComponent(fileName)}`;
+const eminsphereExternalUrl = "https://www.eminsphere.com/";
 
-const speakerImages: Record<string, string> = {
-  "Dr. Tiansheng Yang": "https://static.wixstatic.com/media/30814e_ab0670f34d354ffabafcaa2849d78701~mv2.jpg",
-  "Dr. Firas Zeidan": "https://static.wixstatic.com/media/30814e_d725b17d6d374b3abf1081771e55f53f~mv2.jpeg",
-  "Yukti Goyal": "https://static.wixstatic.com/media/30814e_1702bfb393b6412286c9885c4fff0774~mv2.jpg",
-  "Dr. Ayoub Regragui": "https://static.wixstatic.com/media/30814e_142a95afa78c4022bf6df397341fe59d~mv2.jpeg",
-};
+const heroBannerImage = icqadtsAsset("30814e_01571faffb8f491e9d9719a975bdbc88~mv2.avif");
+
+const fallbackSpeakerImage = icqadtsAsset("30814e_01571faffb8f491e9d9719a975bdbc88~mv2.avif");
 
 const publicationCards = [
   {
@@ -102,6 +104,10 @@ const delegateCards = [
 ];
 
 const upcomingFallback = (finalId: string) => upcomingConferences[finalId];
+const upcomingAliasMap: Record<string, string> = {
+  "copy-of-icmref-26": "icaits-26",
+  "copy-of-icaits-26": "icates-26",
+};
 
 const SpeakerCard = ({
   name,
@@ -161,7 +167,8 @@ const UpcomingConferenceLayout = () => {
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
   const pathId = location.pathname.split("/").pop() || "";
-  const finalId = id || pathId;
+  const rawId = id || pathId;
+  const finalId = upcomingAliasMap[rawId] || rawId;
 
   if (finalId === "icaist-26") {
     const data = recentConferences[finalId];
@@ -174,6 +181,14 @@ const UpcomingConferenceLayout = () => {
       <div className="min-h-screen bg-[#060b17] text-slate-100 selection:bg-cyan-400/30 selection:text-white">
         <Header />
         <main className="relative overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: `url(${heroBannerImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center top",
+            }}
+          />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(20,184,166,0.18),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.14),transparent_28%),linear-gradient(to_bottom,#2c5a67_0%,#060b17_16%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:120px_120px] opacity-20" />
 
@@ -215,12 +230,14 @@ const UpcomingConferenceLayout = () => {
               <div className="rounded-full bg-cyan-400 px-8 py-4 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20">
                 12th April 2026 | Virtual Mode | Global Participation
               </div>
-              <Link
-                to="/registration"
+              <a
+                href={eminsphereExternalUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-full bg-emerald-400 px-8 py-4 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/20 transition-transform hover:-translate-y-0.5"
               >
                 Submit Full Paper
-              </Link>
+              </a>
             </div>
           </section>
 
@@ -263,8 +280,18 @@ const UpcomingConferenceLayout = () => {
                   transition={{ delay: index * 0.06 }}
                   className="rounded-2xl border border-slate-200/15 bg-white px-5 py-7 text-center text-slate-700 shadow-[0_22px_70px_rgba(0,0,0,0.3)]"
                 >
-                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-slate-100 text-cyan-500">
-                    {index === 0 ? <BookOpen className="h-7 w-7" /> : index === 1 ? <BadgeCheck className="h-7 w-7" /> : index === 2 ? <Globe className="h-7 w-7" /> : <CheckCircle2 className="h-7 w-7" />}
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-cyan-500">
+                    {card.logo ? (
+                      <img src={card.logo} alt={card.title} className="h-10 w-10 object-contain" loading="lazy" />
+                    ) : index === 0 ? (
+                      <BookOpen className="h-7 w-7" />
+                    ) : index === 1 ? (
+                      <BadgeCheck className="h-7 w-7" />
+                    ) : index === 2 ? (
+                      <Globe className="h-7 w-7" />
+                    ) : (
+                      <CheckCircle2 className="h-7 w-7" />
+                    )}
                   </div>
                   <h3 className="text-lg font-semibold text-indigo-600">{card.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-slate-600">{card.description}</p>
@@ -368,7 +395,7 @@ const UpcomingConferenceLayout = () => {
                   name={speaker.name}
                   title={speaker.title}
                   affiliation={speaker.affiliation}
-                  imageUrl={speakerImages[speaker.name] || speaker.imageUrl}
+                  imageUrl={speaker.imageUrl || fallbackSpeakerImage}
                 />
               ))}
             </div>
@@ -377,16 +404,14 @@ const UpcomingConferenceLayout = () => {
           <section className="relative mx-auto max-w-7xl px-4 py-12 md:px-8 md:py-16">
             <SectionHeading title="International Session Experts" subtitle="Featured experts contributing to the conference's technical sessions and panel discussions." />
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {conferenceExperts.map((expert) => (
+              {conferenceExperts.map((expert, index) => (
                 <div key={expert.name} className="rounded-2xl border border-white/10 bg-white/6 p-5 text-center backdrop-blur-sm">
-                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400/30 to-slate-800 text-2xl font-bold text-cyan-200">
-                    {expert.name
-                      .split(" ")
-                      .filter(Boolean)
-                      .slice(0, 2)
-                      .map((part) => part[0])
-                      .join("")}
-                  </div>
+                  <img
+                      src={expert.imageUrl || fallbackSpeakerImage}
+                    alt={expert.name}
+                    loading="lazy"
+                    className="mx-auto h-24 w-24 rounded-full object-cover object-top ring-2 ring-cyan-300/25"
+                  />
                   <h3 className="mt-4 text-lg font-semibold text-cyan-300">{expert.name}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-200/85">{expert.title}</p>
                   <p className="text-sm leading-6 text-slate-400">{expert.affiliation}</p>
@@ -415,12 +440,14 @@ const UpcomingConferenceLayout = () => {
             <p className="mx-auto mt-4 max-w-3xl text-sm md:text-base leading-7 text-slate-200/65">
               The conference invites researchers and practitioners to contribute original, high-quality research addressing emerging challenges in intelligent computational ecosystems and advanced technological systems.
             </p>
-            <Link
-              to="/registration"
+            <a
+              href={eminsphereExternalUrl}
+              target="_blank"
+              rel="noreferrer"
               className="mt-8 inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-transform hover:-translate-y-0.5"
             >
               Register Now <ChevronRight className="h-4 w-4" />
-            </Link>
+            </a>
           </section>
         </main>
         <Footer />
@@ -429,6 +456,7 @@ const UpcomingConferenceLayout = () => {
   }
 
   const data = finalId ? upcomingFallback(finalId) : undefined;
+  const isICATES = finalId === "icates-26";
 
   if (!data) {
     return (
@@ -452,10 +480,36 @@ const UpcomingConferenceLayout = () => {
       <main className="flex-1 max-w-5xl mx-auto w-full px-4 py-16 md:py-24">
         <div className="text-center mb-16 relative">
           <div className="absolute inset-x-0 -top-10 h-32 bg-gradient-to-b from-primary/5 to-transparent -z-10" />
+          {isICATES ? (
+            <div className="mb-6 overflow-hidden rounded-2xl border border-border/70 shadow-sm">
+              <img
+                src={icatesAsset("11062b_3e51224f3ee74964a141005767e8feb9~mv2.jpg")}
+                alt="ICATES-26 banner"
+                className="h-32 w-full object-cover object-center md:h-44"
+                loading="eager"
+              />
+            </div>
+          ) : null}
           <span className="inline-block px-4 py-1.5 mb-6 text-sm font-bold uppercase tracking-widest text-primary border border-primary/20 rounded-full shadow-sm bg-card">
             Upcoming Event
           </span>
           <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-6">{data.title}</h1>
+          {isICATES ? (
+            <div className="mb-6 flex items-center justify-center gap-4">
+              <img
+                src={icatesAsset("30814e_1c5123d35814427e94f13afa05595c19~mv2.png")}
+                alt="Eminsphere logo"
+                className="h-16 w-16 rounded-lg border border-border/60 object-cover"
+                loading="lazy"
+              />
+              <img
+                src={icatesAsset("30814e_7410938484bc40e9a11c6254db663a5a~mv2.jpg")}
+                alt="Accreditation logo"
+                className="h-16 w-16 rounded-lg border border-border/60 object-cover"
+                loading="lazy"
+              />
+            </div>
+          ) : null}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-muted-foreground font-medium text-lg">
             <span className="flex items-center gap-2">
               <Calendar className="w-5 h-5 text-accent" />
@@ -510,8 +564,22 @@ const UpcomingConferenceLayout = () => {
             <h3 className="font-semibold text-xl">Call for Papers Open</h3>
             <p className="text-muted-foreground">Submit your abstract today for a chance to present your findings.</p>
             <div className="flex flex-wrap gap-4 mt-2 justify-center">
-              <button className="px-8 py-3 bg-primary text-primary-foreground font-bold rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5">Submit Abstract</button>
-              <button className="px-8 py-3 bg-card border-2 border-primary text-primary font-bold rounded-lg shadow hover:bg-muted transition-colors">Register Now</button>
+              <a
+                href={eminsphereExternalUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="px-8 py-3 bg-primary text-primary-foreground font-bold rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
+              >
+                Submit Abstract
+              </a>
+              <a
+                href={eminsphereExternalUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="px-8 py-3 bg-card border-2 border-primary text-primary font-bold rounded-lg shadow hover:bg-muted transition-colors"
+              >
+                Register Now
+              </a>
             </div>
           </div>
         </div>

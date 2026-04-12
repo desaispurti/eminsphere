@@ -19,7 +19,7 @@ const Registration = () => {
       <section className="py-16 md:py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <img
-            src="https://static.wixstatic.com/media/30814e_455d54f2ef2e4d769378c9d52720f5fd~mv2.png/v1/fill/w_977,h_511,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Reg.png"
+            src="/assets/Registration%20_%20Eminsphere_files/Reg.png"
             alt="Registration details"
             className="w-full max-w-3xl mx-auto rounded-lg shadow-md mb-8"
             loading="lazy"
@@ -31,7 +31,7 @@ const Registration = () => {
             className="inline-block"
           >
             <img
-              src="https://static.wixstatic.com/media/30814e_4990ef42139a4f22a19d6437da297f6e~mv2.png/v1/fill/w_161,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/30814e_4990ef42139a4f22a19d6437da297f6e~mv2.png"
+              src="/assets/Registration%20_%20Eminsphere_files/30814e_4990ef42139a4f22a19d6437da297f6e~mv2.png"
               alt="PayPal payment"
               className="h-20 mx-auto"
               loading="lazy"

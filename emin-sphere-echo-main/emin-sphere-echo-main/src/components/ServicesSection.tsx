@@ -4,22 +4,22 @@ const services = [
   {
     title: "Academic Publishing",
     description: "Global research publishing support.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80",
+    image: "/assets/Home%20_%20Eminsphere_files/photo-1522202176988-66273c2fd55f",
   },
   {
     title: "Conference Management",
     description: "International conference execution.",
-    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80",
+    image: "/assets/Home%20_%20Eminsphere_files/photo-1532619187608-e5375cab36aa",
   },
   {
     title: "Thesis Consultation",
     description: "Expert academic mentoring.",
-    image: "https://images.unsplash.com/photo-1532619187608-e5375cab36aa?w=600&q=80",
+    image: "/assets/Home%20_%20Eminsphere_files/photo-1556761175-4b46a572b786",
   },
   {
     title: "Skill Development",
     description: "Professional upskilling programs.",
-    image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=600&q=80",
+    image: "/assets/Home%20_%20Eminsphere_files/photo-1607746882042-944635dfe10e",
   },
 ];
 

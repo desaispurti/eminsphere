@@ -3,22 +3,22 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
 const bookImages = [
-  "https://static.wixstatic.com/media/30814e_ef74524add6a4927996eafcbbd330437~mv2.jpg/v1/fit/w_480,h_720,q_90,enc_avif,quality_auto/30814e_ef74524add6a4927996eafcbbd330437~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_a440f5cce8b546d3a3cfff1a91613384~mv2.jpg/v1/fit/w_480,h_720,q_90,enc_avif,quality_auto/30814e_a440f5cce8b546d3a3cfff1a91613384~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_16b69a2148aa4ec3974c175db786f935~mv2.jpg/v1/fit/w_480,h_763,q_90,enc_avif,quality_auto/30814e_16b69a2148aa4ec3974c175db786f935~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_7548c433f07049688dc6c086a752fbbb~mv2.jpg/v1/fit/w_480,h_720,q_90,enc_avif,quality_auto/30814e_7548c433f07049688dc6c086a752fbbb~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_9d18e73cd65b44698a048b4451df1769~mv2.jpg/v1/fit/w_480,h_765,q_90,enc_avif,quality_auto/30814e_9d18e73cd65b44698a048b4451df1769~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_93f80338a8b842bcad1d34fe83c304ca~mv2.jpg/v1/fit/w_480,h_765,q_90,enc_avif,quality_auto/30814e_93f80338a8b842bcad1d34fe83c304ca~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_57ed92c9f96443dcb1f286e9395c1c06~mv2.jpg/v1/fit/w_480,h_765,q_90,enc_avif,quality_auto/30814e_57ed92c9f96443dcb1f286e9395c1c06~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_6e1ed5947b4d4d33a0aaadc88ee948e5~mv2.jpg/v1/fit/w_480,h_765,q_90,enc_avif,quality_auto/30814e_6e1ed5947b4d4d33a0aaadc88ee948e5~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_4e176ec10b1b4cc984302fbb62a627ea~mv2.jpg/v1/fit/w_480,h_765,q_90,enc_avif,quality_auto/30814e_4e176ec10b1b4cc984302fbb62a627ea~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_057c1e9e1f7742fa9ff7ca820bd743f4~mv2.jpg/v1/fit/w_480,h_765,q_90,enc_avif,quality_auto/30814e_057c1e9e1f7742fa9ff7ca820bd743f4~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_fa1aba31e5cc49e08870502f68c5b671~mv2.jpg/v1/fit/w_480,h_765,q_90,enc_avif,quality_auto/30814e_fa1aba31e5cc49e08870502f68c5b671~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_3eec141d6071465090009732c1419911~mv2.jpg/v1/fit/w_480,h_765,q_90,enc_avif,quality_auto/30814e_3eec141d6071465090009732c1419911~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_5c032d72cf2a4aa4b85088bc66bd8cf8~mv2.jpg/v1/fit/w_480,h_765,q_90,enc_avif,quality_auto/30814e_5c032d72cf2a4aa4b85088bc66bd8cf8~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_b21feb67151747e2a3740b1e47dc4dbf~mv2.jpg/v1/fit/w_480,h_765,q_90,enc_avif,quality_auto/30814e_b21feb67151747e2a3740b1e47dc4dbf~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_69e6f21ca0fa41ebab6f0c9ad4314fa6~mv2.jpg/v1/fit/w_480,h_721,q_90,enc_avif,quality_auto/30814e_69e6f21ca0fa41ebab6f0c9ad4314fa6~mv2.jpg",
-  "https://static.wixstatic.com/media/30814e_7d7db80e5b8c4e60bfaca9b3c2dd8377~mv2.jpg/v1/fit/w_480,h_765,q_90,enc_avif,quality_auto/30814e_7d7db80e5b8c4e60bfaca9b3c2dd8377~mv2.jpg",
+  "/assets/Books%20_%20Eminsphere_files/30814e_f7d2e633c973493e994531e83f961108~mv2.png",
+  "/assets/Books%20_%20Eminsphere_files/30814e_cc155ed03b104806bf81258474a65cf7~mv2.png",
+  "/assets/Books%20_%20Eminsphere_files/30814e_9ddc6849f8e44a65b86f7bff5824cd6d~mv2.png",
+  "/assets/Books%20_%20Eminsphere_files/30814e_7d1e1a9e732a452e96bfd1d3b6e53799~mv2.png",
+  "/assets/Books%20_%20Eminsphere_files/30814e_6dbe70cbdceb481bb40f14d92266b7dc~mv2.png",
+  "/assets/Books%20_%20Eminsphere_files/30814e_5d49a33e7ad94a7fb551d35b324554be~mv2.png",
+  "/assets/Books%20_%20Eminsphere_files/30814e_4e7690d89d9040cbb988c86eecfc0961~mv2.png",
+  "/assets/Books%20_%20Eminsphere_files/30814e_1fc8c1efbb284705926f3bbeb216b966~mv2.png",
+  "/assets/Books%20_%20Eminsphere_files/30814e_1f17314764334431a3d4eaf47b220f68~mv2.png",
+  "/assets/Books%20_%20Eminsphere_files/30814e_199f000947d84fe7a1e3f97f0535ab35~mv2.jpg",
+  "/assets/Books%20_%20Eminsphere_files/30814e_19396b73f27f4728b616f41053071dac~mv2.jpg",
+  "/assets/Books%20_%20Eminsphere_files/30814e_133147aca816471683e512c68e38a1da~mv2.jpg",
+  "/assets/Books%20_%20Eminsphere_files/30814e_12125d969605430f9e7e06f3731a8ff1~mv2.png",
+  "/assets/Books%20_%20Eminsphere_files/30814e_7410938484bc40e9a11c6254db663a5a~mv2.jpg",
+  "/assets/Books%20_%20Eminsphere_files/174857.png",
+  "/assets/Books%20_%20Eminsphere_files/30814e_b21feb67151747e2a3740b1e47dc4dbf~mv2.jpg",
 ];
 
 const Books = () => {

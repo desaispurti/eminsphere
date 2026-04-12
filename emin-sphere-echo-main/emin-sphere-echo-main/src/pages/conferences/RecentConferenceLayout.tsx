@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { BookOpen, Globe, Award, Users, FileText, Calendar, Lightbulb, MapPin, Mic2, GraduationCap, Download, Star, Hash, ChevronRight, Brain, BarChart2, Leaf, Building2, Shield, Zap } from "lucide-react";
 import { recentConferences } from "@/data/recentConferencesData";
 
+const eminsphereExternalUrl = "https://www.eminsphere.com/";
+
 const iconMap: Record<string, React.ElementType> = {
   globe: Globe,
   award: Award,
@@ -119,9 +121,20 @@ const RecentConferenceLayout = () => {
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-gradient-to-br from-accent/10 to-primary/10 border border-accent/20 p-8 md:p-12 rounded-3xl relative overflow-hidden">
               <div className="absolute top-0 right-0 -m-8 w-48 h-48 bg-accent/10 rounded-full blur-3xl" />
               <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
-                <div className="w-24 h-24 rounded-2xl bg-accent/20 flex items-center justify-center text-accent shrink-0">
-                  <Star size={40} />
-                </div>
+                {data.chiefGuest.imageUrl ? (
+                  <div className="w-24 h-24 rounded-2xl overflow-hidden border border-accent/30 bg-accent/10 shrink-0">
+                    <img
+                      src={data.chiefGuest.imageUrl}
+                      alt={data.chiefGuest.name}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-24 h-24 rounded-2xl bg-accent/20 flex items-center justify-center text-accent shrink-0">
+                    <Star size={40} />
+                  </div>
+                )}
                 <div className="text-center md:text-left">
                   <span className="text-sm font-bold uppercase tracking-widest text-accent mb-2 block">Distinguished Chief Guest</span>
                   <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">{data.chiefGuest.name}</h3>
@@ -197,9 +210,20 @@ const RecentConferenceLayout = () => {
                     transition={{ delay: i * 0.05 }}
                     className="bg-secondary/10 hover:bg-secondary/20 transition-all border border-secondary/30 p-6 rounded-2xl group"
                   >
-                    <div className="w-14 h-14 rounded-xl bg-secondary/20 text-secondary-foreground flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                      <Users className="w-7 h-7" />
-                    </div>
+                    {expert.imageUrl ? (
+                      <div className="mb-4 overflow-hidden rounded-xl border border-border/60 bg-muted/20">
+                        <img
+                          src={expert.imageUrl}
+                          alt={expert.name}
+                          loading="lazy"
+                          className="w-full h-40 object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-14 h-14 rounded-xl bg-secondary/20 text-secondary-foreground flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <Users className="w-7 h-7" />
+                      </div>
+                    )}
                     <h4 className="font-display font-bold text-lg text-foreground mb-1">{expert.name}</h4>
                     <p className="text-sm text-secondary-foreground font-medium mb-1">{expert.title}</p>
                     <p className="text-sm text-muted-foreground">{expert.affiliation}</p>
@@ -307,9 +331,14 @@ const RecentConferenceLayout = () => {
                </div>
                <h3 className="font-display text-2xl font-bold mb-3">Call for Papers</h3>
                <p className="text-muted-foreground mb-8 line-clamp-3">Join global experts and researchers. Submit your research abstracts today.</p>
-               <button className="bg-foreground text-background w-full py-3.5 rounded-xl font-bold hover:bg-foreground/90 transition-transform active:scale-95 shadow-xl">
+               <a
+                 href={eminsphereExternalUrl}
+                 target="_blank"
+                 rel="noreferrer"
+                 className="bg-foreground text-background w-full py-3.5 rounded-xl font-bold hover:bg-foreground/90 transition-transform active:scale-95 shadow-xl"
+               >
                  Submit Paper
-               </button>
+               </a>
             </motion.div>
           </div>
 
@@ -376,7 +405,11 @@ const RecentConferenceLayout = () => {
                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
                  {data.publications.map((pub, i) => (
                    <div key={i} className="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-white/5">
-                     <BookOpen className="text-accent mb-4 w-8 h-8" />
+                     {pub.logoUrl ? (
+                       <img src={pub.logoUrl} alt={pub.title} className="mb-4 h-12 w-auto object-contain" loading="lazy" />
+                     ) : (
+                       <BookOpen className="text-accent mb-4 w-8 h-8" />
+                     )}
                      <h4 className="text-white font-bold mb-2">{pub.title}</h4>
                      <p className="text-white/60 text-sm">{pub.desc}</p>
                    </div>

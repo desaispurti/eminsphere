@@ -22,7 +22,7 @@ const Career = () => {
 
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80" alt="Career" className="w-full h-full object-cover" />
+          <img src="/assets/ICAESET-2026%20_%20Eminsphere_files/11062b_3e51224f3ee74964a141005767e8feb9~mv2.jpg" alt="Career" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--section-dark))]/90 to-[hsl(var(--section-dark))]/70" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">

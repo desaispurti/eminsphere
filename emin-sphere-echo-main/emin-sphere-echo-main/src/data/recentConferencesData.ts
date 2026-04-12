@@ -7,13 +7,13 @@ export interface RecentConferenceData {
   location?: string;
   isbn?: string;
   downloadLink?: string;
-  chiefGuest?: { name: string; title: string; affiliation: string; };
+  chiefGuest?: { name: string; title: string; affiliation: string; imageUrl?: string; };
   keynoteSpeakers?: { name: string; title: string; affiliation: string; imageUrl?: string; }[];
-  conferenceExperts?: { name: string; title: string; affiliation: string; }[];
+  conferenceExperts?: { name: string; title: string; affiliation: string; imageUrl?: string; }[];
   importantDates?: { label: string; date: string; }[];
   objectives?: { title: string; desc: string; }[];
   whyAttend?: { title: string; desc: string; icon?: string; }[];
-  publications?: { title: string; desc: string; }[];
+  publications?: { title: string; desc: string; logoUrl?: string; }[];
   tracks?: string[];
   awards?: { title: string; desc: string; }[];
 }
@@ -33,27 +33,34 @@ export const recentConferences: Record<string, RecentConferenceData> = {
       "affiliation": "IU International University, Germany"
     },
     "keynoteSpeakers": [
-      { "name": "Prof. Dr. Alexander Bull", "title": "Professor", "affiliation": "IU International University, Germany" },
-      { "name": "Dr. Walida Ounruean", "title": "International Education Innovator, Faculty of Education", "affiliation": "Uttaradit Rajabhat University, Thailand" },
-      { "name": "Dr. Yulia Kryvenko", "title": "Assistant Professor", "affiliation": "Istanbul Sabahattin Zaim University, France" },
-      { "name": "Nadine Zeinoun", "title": "Master Certified Coach & President", "affiliation": "ICF Chapter Ottawa, Saint Joseph University, Lebanon" },
-      { "name": "Katarzyna Antosz", "title": "Associate Professor", "affiliation": "Rzeszow University of Technology, Poland" },
-      { "name": "Dr. Mehwish (Mishy) Rashid", "title": "DHSc", "affiliation": "Keiser University, USA" },
-      { "name": "Ezinne Esther Arisa", "title": "Founder", "affiliation": "Candy Rainbow Creations, South Africa" },
-      { "name": "Mouhssin Ait El Mouden", "title": "Researcher", "affiliation": "Faculty of Letters, Ibn Tofail University, Morocco" },
-      { "name": "Dr. Firas Zeidan", "title": "Researcher & Professor", "affiliation": "Lebanon" },
-      { "name": "Dr. Elizabeth Sarah George", "title": "Assistant Professor", "affiliation": "RV University, India" },
-      { "name": "Mrugendra Madalagi", "title": "Independent Researcher & Solution Architect", "affiliation": "Technology Solutions & Architecture, USA" },
-      { "name": "Utkarsh Sharma", "title": "Independent Researcher & AI-FinTech Leader", "affiliation": "Artificial Intelligence - FinTech Innovation, USA" }
+      { "name": "Dr. Ayoub Regragui", "title": "Doctorate in Applied Linguistics", "affiliation": "Mohammed V University, Morocco", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_01571faffb8f491e9d9719a975bdbc88~mv2.avif" },
+      { "name": "Mr. Suyash Rai", "title": "5G, Open RAN, AI Networks, Telecom Systems, Wireless Transformation Expert", "affiliation": "Texas, United States", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_73a9a72f460b41268da5f5a621c388c3~mv2.jpeg" },
+      { "name": "Mr. Pravin Barapatre", "title": "Engineering Leader in AI, Robotics & Distributed Systems", "affiliation": "USA", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_b190cb540fe940dcb0c96cd2ceab143f~mv2.png" },
+      { "name": "Trupti Raikar", "title": "Independent Researcher, SAP Technology Architect", "affiliation": "ERP Modernization and Cloud Transformation, Austin, TX, USA", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_ca6075e6cef84116937f732636db6914~mv2.jpeg" },
+      { "name": "Hari Rowtu", "title": "Independent Researcher", "affiliation": "Founder & CEO | Innovating in Construction with AI-Driven Technologies and Robotics | Solving Critical Problems for Housing costs, California, United States", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/1693892740547" },
+      { "name": "Hicham El Khodja", "title": "Researcher", "affiliation": "Hassan I University, Faculty of Languages and Arts, Settat - Kingdom of Morocco", "imageUrl": "/scraped-eminsphere/static.wixstatic.com/media/30814e_d1c8c65f9d4d4bd59632c05aa894aa71~mv2.jpeg/v1/crop/x_0,y_39,w_798,h_798/fill/w_688,h_688,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Hicham%20ELKHOUAJA.jpeg" },
+      { "name": "Prof. Dr. Alexander Bull", "title": "Faculty of Business Administration", "affiliation": "IU International University of Applied Sciences, Germany", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
+      { "name": "Kateryna Antosz", "title": "Associate Professor", "affiliation": "Rzeszow University of Technology, Rzeszów, Podkarpackie, Poland", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_36d2bb3012e64343a18002662ca61e6b~mv2.avif" },
+      { "name": "Dr. Aida Mehrad", "title": "Academic Director & Associate Professor", "affiliation": "C3S Business School", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/502b14_2f32591e100346daa035a4aaf27ef7d7~mv2.jpeg" },
+      { "name": "Dr. Mehwish (Mishy) Rashid", "title": "DHSc", "affiliation": "Keiser University, USA", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_d030e1dbf7ef4028909beba2b99a69be~mv2.jpeg" },
+      { "name": "Nadine Zeinoun", "title": "Master Certified Coach", "affiliation": "President, ICF Chapter Ottawa; Facilitator, Saint Joseph University, Lebanon", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg" },
+      { "name": "Yukti Goyal", "title": "Lead Software Engineer", "affiliation": "Tampa, FL, USA", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_f4baaf1857454707a3b7c0c8e5e10963~mv2.avif" },
+      { "name": "Ezinne Esther Arisa", "title": "Founder", "affiliation": "Candy Rainbow Creations, South Africa", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/502b14_3adc2682f9064817b4728eca9cd4a0b1~mv2.jpeg" }
     ],
     "conferenceExperts": [
-      { "name": "Dr. S. M. Shiyekar", "title": "Dean - Research, Development and Grants", "affiliation": "D. Y. Patil College of Engineering, Akurdi, Pune, India" },
-      { "name": "Dr. Prabhat Thakur", "title": "Associate Professor", "affiliation": "Alliance School of Applied Engineering, Bengaluru, Karnataka, India" },
-      { "name": "Dr. Jitendra Pandey, FHEA", "title": "Senior Faculty Member", "affiliation": "Middle East College, Affiliated to Coventry University, Oman" },
-      { "name": "Andreza Malena Guedes da Costa Silva", "title": "International Research Delegate", "affiliation": "IPM, Brazil" },
-      { "name": "Fatimah Alneel", "title": "Academic Delegate", "affiliation": "The University of Arizona, United States" },
-      { "name": "Marghescu Cristina-Florentina", "title": "Research Delegate", "affiliation": "University Politehnica of Bucharest, Romania" },
-      { "name": "James Abdul Malik", "title": "International Delegate", "affiliation": "Academy for Cultural Diplomacy, Germany" }
+      { "name": "Dr. Zoha Rahman", "title": "Founder & Country Director", "affiliation": "USA", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_2a893f0530e74f178c18e5939b687048~mv2.jpg" },
+      { "name": "Dr. Dina A. Alkhodary", "title": "Associate Professor", "affiliation": "Jordan", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/IMG_20250709_234602_216.jpg" },
+      { "name": "Dr. Firas Zeidan", "title": "Researcher & Professor", "affiliation": "Lebanon", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_571b3e70d8ff476f8b1272ef84538d8f~mv2.jpeg" },
+      { "name": "Dr. Walida Ounruean", "title": "Faculty of Education", "affiliation": "Thailand", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_ac6c40d612254293a4f1f4479dfd7b61~mv2.avif" },
+      { "name": "Dr. Tiansheng Yang", "title": "University of South Wales", "affiliation": "UK", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_3a6549a4d2904005a224db41ca5f9cd0~mv2.avif" },
+      { "name": "Mouhsine Ait El Mouden", "title": "Researcher", "affiliation": "Morocco", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_b0c50d221b41483fa5ab8bfb50f719e5~mv2.avif" },
+      { "name": "Sam Lawe", "title": "Infrastructure Manager", "affiliation": "New Zealand", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/4.jpeg" },
+      { "name": "Meryem Gurel", "title": "Founder", "affiliation": "Turkey", "imageUrl": "/scraped-eminsphere/static.wixstatic.com/media/30814e_6346862f510f41209c68b590a9da5215~mv2.jpeg/v1/crop/x_0,y_72,w_914,h_914/fill/w_688,h_688,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Meryem.jpeg" },
+      { "name": "Dr. Ruth Abiola Adimula", "title": "Associate Professor", "affiliation": "Nigeria", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_d096ce6ec8ff4b05a2cc1c7db574278b~mv2.jpeg" },
+      { "name": "Hemang Upadhyay", "title": "Independent Researcher", "affiliation": "AI, E-commerce & Analytics, USA", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_d8f3f76a4383421eb967c779a89ac17f~mv2.jpeg" },
+      { "name": "Lawrence Mazaki Mashati", "title": "Community Development Professional", "affiliation": "International Missionary for Christ Kenya (IMFC), Nairobi, Kenya", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/502b14_ec9a529cdc7c4e6e852442836e4fed51~mv2.png" },
+      { "name": "Dr. Yulia Kryvenko", "title": "Assistant Professor", "affiliation": "Istanbul Sabahattin Zaim University, France", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_1cc9e627ca8342d59e4122b9240e638d~mv2.png" },
+      { "name": "Emem Akpabio", "title": "Invited Delegate", "affiliation": "International Conference Participant, South Africa", "imageUrl": "/assets/ICQADTS-2026%20_%20Eminsphere_files/30814e_2dad2d939abb4236bcb405093be55872~mv2.jpg" }
     ],
     "tracks": [
       "Quantum Machine Intelligence (Hybrid learning, variational circuits, quantum algorithms)",
@@ -103,17 +110,17 @@ export const recentConferences: Record<string, RecentConferenceData> = {
     "description": "The International Conference on Artificial Intelligence, Data Science, and Sustainable Systems (ICAIDSS-26) is a globally recognized academic and professional platform dedicated to fostering innovation, collaboration, and knowledge exchange in the rapidly advancing domains of Artificial Intelligence, Data Science, and Sustainable Technologies. The conference is designed to bring together a diverse community of researchers, academicians, scientists, industry experts, and policymakers from across the globe to present their research findings, share insights, and discuss emerging challenges and opportunities shaping the future of intelligent and sustainable systems.\n\nIn today's data-driven and technology-oriented world, the integration of Artificial Intelligence and Data Science with sustainable development has become essential for addressing complex global challenges such as climate change, resource optimization, healthcare innovation, smart infrastructure, and digital transformation. ICAIDSS-26 provides a multidisciplinary platform that encourages the exploration of advanced computational techniques, intelligent systems, and sustainable engineering practices aimed at creating impactful and scalable solutions.\n\nThe conference will feature keynote addresses from distinguished international experts, technical paper presentations, and interactive discussions that highlight cutting-edge research and real-world applications. All submitted papers undergo a rigorous peer-review process to ensure high academic quality, originality, and relevance to the conference themes. Selected high-quality papers will be recommended for publication in reputed indexed journals, further enhancing the visibility and impact of the research contributions.\n\nICAIDSS-26 also emphasizes international collaboration by connecting participants from different regions, institutions, and professional backgrounds. It serves as a bridge between academia and industry, enabling knowledge transfer, networking opportunities, and future research partnerships. By participating in ICAIDSS-26, attendees will gain valuable insights into emerging technologies, current industry practices, and future research directions, making it a significant platform for both academic growth and professional development.",
     "dateAndMode": "29 March 2026 | Virtual Mode",
     "keynoteSpeakers": [
-      { "name": "Dr. Walida Ounruean", "title": "International Education Innovator, Faculty of Education", "affiliation": "Uttaradit Rajabhat University, Thailand", "imageUrl": "/speakers/icaidss-26/01-dr-walida-ounruean.jpg" },
-      { "name": "Dr. Tiansheng Yang", "title": "Faculty Member", "affiliation": "University of South Wales, United Kingdom", "imageUrl": "/speakers/icaidss-26/02-dr-tiansheng-yang.jpg" },
-      { "name": "Marghescu Cristina-Florentina", "title": "Researcher & Academic", "affiliation": "University Politehnica of Bucharest (UPB), Romania", "imageUrl": "/speakers/icaidss-26/03-marghescu-cristina-florentina.png" },
-      { "name": "Dr. Firas Zeidan", "title": "Researcher & Professor, Higher Education & Research Academic & Scientific Leadership", "affiliation": "Lebanon", "imageUrl": "/speakers/icaidss-26/04-dr-firas-zeidan.jpg" },
-      { "name": "Mr. Pradeep Kachakayla", "title": "Cloud, Data Analytics, and AI Expert, Expertise in Cloud Computing, Data Analytics, and AI across Multiple Sectors", "affiliation": "USA", "imageUrl": "/speakers/icaidss-26/05-mr-pradeep-kachakayla.png" },
-      { "name": "Mr. Shikhar Singhal", "title": "AI, Data, and Business Expert, Expertise in Artificial Intelligence, Data Analytics, and Business Technology Solutions", "affiliation": "New York, USA", "imageUrl": "/speakers/icaidss-26/06-mr-shikhar-singhal.png" },
-      { "name": "Dr. Mohamed Kebbouj", "title": "PhD, Sport Performance, Normal Higher School Hassan II", "affiliation": "University of Casablanca, Morocco", "imageUrl": "/speakers/icaidss-26/07-dr-mohamed-kebbouj.jpg" },
-      { "name": "Manoj Bahirgonde", "title": "Sr. Product Manager, Product Strategy, Data Transformation and Technology Product Leadership", "affiliation": "Atlanta, Georgia, USA", "imageUrl": "/speakers/icaidss-26/08-manoj-bahirgonde.png" },
-      { "name": "Dr. Ayoub Regragui", "title": "Applied Linguistics Researcher, Doctorate in Arabic Linguistics, International Teaching & Academic Research", "affiliation": "Morocco", "imageUrl": "/speakers/icaidss-26/09-dr-ayoub-regragui.png" },
-      { "name": "Dr. Elizabeth Sarah George", "title": "Assistant Professor", "affiliation": "All University, India", "imageUrl": "/speakers/icaidss-26/10-dr-elizabeth-sarah-george.jpg" },
-      { "name": "Mouhssin Ait El Mouden", "title": "Researcher", "affiliation": "Faculty of Letters, Ibn Tofail University, Morocco", "imageUrl": "/speakers/icaidss-26/11-mouhssin-ait-el-mouden.jpg" }
+      { "name": "Dr. Walida Ounruean", "title": "International Education Innovator, Faculty of Education", "affiliation": "Uttaradit Rajabhat University, Thailand", "imageUrl": "/assets/ICAIDSS-26%20_%20Eminsphere_files/30814e_73060115e6b34cb882286565559ff5e2~mv2.jpeg" },
+      { "name": "Dr. Tiansheng Yang", "title": "Faculty Member", "affiliation": "University of South Wales, United Kingdom", "imageUrl": "/assets/ICAIDSS-26%20_%20Eminsphere_files/30814e_ab0670f34d354ffabafcaa2849d78701~mv2.jpg" },
+      { "name": "Marghescu Cristina-Florentina", "title": "Researcher & Academic", "affiliation": "University Politehnica of Bucharest (UPB), Romania", "imageUrl": "/assets/ICAIDSS-26%20_%20Eminsphere_files/30814e_fb0f8a532d8a413abf8b61b143684fed~mv2.png" },
+      { "name": "Dr. Firas Zeidan", "title": "Researcher & Professor, Higher Education & Research Academic & Scientific Leadership", "affiliation": "Lebanon", "imageUrl": "/assets/ICAIDSS-26%20_%20Eminsphere_files/30814e_d725b17d6d374b3abf1081771e55f53f~mv2.jpeg" },
+      { "name": "Mr. Pradeep Kachakayala", "title": "Cloud, Data Analytics, and AI Expert, Expertise in Cloud Computing, Data Analytics, and AI across Multiple Sectors", "affiliation": "USA", "imageUrl": "/assets/ICAIDSS-26%20_%20Eminsphere_files/30814e_45aeebc11e0045a8bd8941721d274f1a~mv2.png" },
+      { "name": "Mr. Shikhar Singhal", "title": "AI, Data, and Business Expert, Expertise in Artificial Intelligence, Data Analytics, and Business Technology Solutions", "affiliation": "New York, USA", "imageUrl": "/assets/ICAIDSS-26%20_%20Eminsphere_files/30814e_00654a10251849539ec26353342c5dbf~mv2.jpg" },
+      { "name": "Dr. Mohamed Rebbouj", "title": "PhD, Sport Performance, Normal Higher School Hassan II", "affiliation": "University of Casablanca, Morocco", "imageUrl": "/assets/ICAIDSS-26%20_%20Eminsphere_files/30814e_1fbcfb0ce35f425eabb9dd005a658e05~mv2.jpeg" },
+      { "name": "Manoj Bahirgonde", "title": "Sr. Product Manager, Product Strategy, Data Transformation and Technology Product Leadership", "affiliation": "Atlanta, Georgia, USA", "imageUrl": "/assets/ICAIDSS-26%20_%20Eminsphere_files/30814e_0f9939591f474b57b412a1f5f02a3efe~mv2.jpeg" },
+      { "name": "Dr. Ayoub Regragui", "title": "Applied Linguistics Researcher, Doctorate in Arabic Linguistics, International Teaching & Academic Research", "affiliation": "Morocco", "imageUrl": "/assets/ICAIDSS-26%20_%20Eminsphere_files/30814e_29e2749c5b2849cab290759fb9dde0dc~mv2.png" },
+      { "name": "Dr. Elizabeth Sarah George", "title": "Assistant Professor", "affiliation": "RV University, India", "imageUrl": "/assets/ICAIDSS-26%20_%20Eminsphere_files/30814e_821d66fc49f64b71a44eb747ef514580~mv2.jpeg" },
+      { "name": "Mouhssin Ait El Mouden", "title": "Researcher", "affiliation": "Faculty of Letters, Ibn Tofail University, Morocco", "imageUrl": "/assets/ICAIDSS-26%20_%20Eminsphere_files/30814e_b0c50d221b41483fa5ab8bfb50f719e5~mv2.avif" }
     ],
     "whyAttend": [
       { "title": "International Paper Presentations", "desc": "Showcasing innovative research contributions across AI, data science, and sustainability domains.", "icon": "filetext" },
@@ -166,28 +173,28 @@ export const recentConferences: Record<string, RecentConferenceData> = {
       "Smart Systems & Industry 4.0 - Smart manufacturing, digital transformation, intelligent infrastructure."
     ],
     "keynoteSpeakers": [
-      { "name": "Ezinne Esther Arisa", "title": "Founder", "affiliation": "Candy Rainbow Creations, South Africa" },
-      { "name": "Karl G. Sieg, M.D.", "title": "Professor of Psychiatry", "affiliation": "University of Central Florida College of Medicine, United States" },
-      { "name": "Rajendra Ugrani", "title": "Researcher and Leader", "affiliation": "AI, ML, Security, Software, California, USA" },
-      { "name": "Katarzyna Antosz", "title": "Associate Professor", "affiliation": "Rzeszow University of Technology, Poland" },
-      { "name": "Dr. Mehwish (Mishy) Rashid", "title": "DHSc", "affiliation": "Keiser University, USA" },
-      { "name": "Dr. Amit Kukker", "title": "Associate Professor", "affiliation": "Department of Computer Science and Engineering, SRM Institute of Science and Technology, Modinagar, India" },
-      { "name": "Prajakta Talathi", "title": "Data Strategy and Performance Measurement Expert", "affiliation": "Education Finance, USA" },
-      { "name": "Nadine Zeinoun", "title": "Master Certified Coach", "affiliation": "President, ICF Chapter Ottawa; Facilitator, Saint Joseph University, Lebanon" },
-      { "name": "Prof. Dr. Alexander Bull", "title": "Professor", "affiliation": "IU International University, Germany" },
-      { "name": "Karan Kumar Ratra", "title": "Independent Researcher", "affiliation": "Innovative E-Commerce Systems Architect and Technology Leader in Retail Technology, USA" },
-      { "name": "Dr. Yulia Kryvenko", "title": "Assistant Professor", "affiliation": "Istanbul Sabahattin Zaim University, France" }
+      { "name": "Ezinne Esther Arisa", "title": "Founder", "affiliation": "Candy Rainbow Creations, South Africa", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/502b14_3adc2682f9064817b4728eca9cd4a0b1~mv2.jpeg" },
+      { "name": "Karl G. Sieg, M.D.", "title": "Professor of Psychiatry", "affiliation": "University of Central Florida College of Medicine, United States", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/30814e_42822b0bd0f145f2a68dd68462fe499c~mv2.jpeg" },
+      { "name": "Rajendra Ugrani", "title": "Researcher and Leader", "affiliation": "AI, ML, Security, Software, California, USA", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/30814e_bc3782d50a1d430d8cc0ab38bfa0b6c5~mv2.jpeg" },
+      { "name": "Katarzyna Antosz", "title": "Associate Professor", "affiliation": "Rzeszow University of Technology, Poland", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/30814e_d511f14d64114d2785f3aa065a35cbb9~mv2.jpeg" },
+      { "name": "Dr. Mehwish (Mishy) Rashid", "title": "DHSc", "affiliation": "Keiser University, USA", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/30814e_d030e1dbf7ef4028909beba2b99a69be~mv2.jpeg" },
+      { "name": "Dr. Amit Kukker", "title": "Associate Professor", "affiliation": "Department of Computer Science and Engineering, SRM Institute of Science and Technology, Modinagar, India", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/30814e_202af98a01b44a83a30ccb73a0e07ce8~mv2.jpeg" },
+      { "name": "Prajakta Talathi", "title": "Data Strategy and Performance Measurement Expert", "affiliation": "Education Finance, USA", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/30814e_bf9d3d9fb4974bc0ba217b4bb03ea14d~mv2.jpg" },
+      { "name": "Nadine Zeinoun", "title": "Master Certified Coach", "affiliation": "President, ICF Chapter Ottawa; Facilitator, Saint Joseph University, Lebanon", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg" },
+      { "name": "Prof. Dr. Alexander Bull", "title": "Professor", "affiliation": "IU International University, Germany", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
+      { "name": "Karan Kumar Ratra", "title": "Independent Researcher", "affiliation": "Innovative E-Commerce Systems Architect and Technology Leader in Retail Technology, USA", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/30814e_b013ae4c49494f099151f25bbffb92fe~mv2.jpeg" },
+      { "name": "Dr. Yulia Kryvenko", "title": "Assistant Professor", "affiliation": "Istanbul Sabahattin Zaim University, France", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/30814e_d030e1dbf7ef4028909beba2b99a69be~mv2.jpeg" }
     ],
     "conferenceExperts": [
-      { "name": "Dr. Jitendra Pandey, FHEA", "title": "Senior Faculty Member", "affiliation": "Middle East College, Affiliated to Coventry University, Oman" },
-      { "name": "Emem Akpabio", "title": "Invited Delegate", "affiliation": "International Conference Participant, South Africa" },
-      { "name": "Andreza Malena Guedes da Costa Silva", "title": "International Research Delegate", "affiliation": "IPM, Brazil" },
-      { "name": "Fatimah Alneel", "title": "Academic Delegate", "affiliation": "The University of Arizona, United States" },
-      { "name": "Marghescu Cristina-Florentina", "title": "Research Delegate", "affiliation": "University Politehnica of Bucharest, Romania" },
-      { "name": "KHADRAN MOHAMMED A ALSAHAIMI", "title": "Conference Delegate", "affiliation": "Jamia Hamdard, Saudi Arabia" },
-      { "name": "James Abdul Malik", "title": "International Delegate", "affiliation": "Academy for Cultural Diplomacy, Germany" },
-      { "name": "Dr. S. M. Shiyekar", "title": "Dean - Research, Development and Grants", "affiliation": "D. Y. Patil College of Engineering, Akurdi, Pune, India" },
-      { "name": "Dr. Prabhat Thakur", "title": "Associate Professor", "affiliation": "Alliance School of Applied Engineering, Bengaluru, Karnataka, India" }
+      { "name": "Dr. Jitendra Pandey, FHEA", "title": "Senior Faculty Member", "affiliation": "Middle East College, Affiliated to Coventry University, Oman", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/174857.png" },
+      { "name": "Emem Akpabio", "title": "Invited Delegate", "affiliation": "International Conference Participant, South Africa", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/190411.png" },
+      { "name": "Andreza Malena Guedes da Costa Silva", "title": "International Research Delegate", "affiliation": "IPM, Brazil", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/201623.png" },
+      { "name": "Fatimah Alneel", "title": "Academic Delegate", "affiliation": "The University of Arizona, United States", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/2278992.png" },
+      { "name": "Marghescu Cristina-Florentina", "title": "Research Delegate", "affiliation": "University Politehnica of Bucharest, Romania", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/2583344.png" },
+      { "name": "KHADRAN MOHAMMED A ALSAHAIMI", "title": "Conference Delegate", "affiliation": "Jamia Hamdard, Saudi Arabia", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/3135768.png" },
+      { "name": "James Abdul Malik", "title": "International Delegate", "affiliation": "Academy for Cultural Diplomacy, Germany", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/921347.png" },
+      { "name": "Dr. S. M. Shiyekar", "title": "Dean - Research, Development and Grants", "affiliation": "D. Y. Patil College of Engineering, Akurdi, Pune, India", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/30814e_1c5123d35814427e94f13afa05595c19~mv2.png" },
+      { "name": "Dr. Prabhat Thakur", "title": "Associate Professor", "affiliation": "Alliance School of Applied Engineering, Bengaluru, Karnataka, India", "imageUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/30814e_1cc9e627ca8342d59e4122b9240e638d~mv2.png" }
     ],
     "importantDates": [
       { "label": "Abstract Submission Deadline", "date": "20 February 2026" },
@@ -211,9 +218,9 @@ export const recentConferences: Record<string, RecentConferenceData> = {
       { "title": "Young Researcher Award", "desc": "Awarded to early-career researchers or postgraduate scholars showing outstanding potential and contribution in emerging technology research." }
     ],
     "publications": [
-      { "title": "ISBN Conference Proceedings", "desc": "All accepted and registered papers will be published in the official conference proceedings with a valid ISBN Number. This ensures proper academic recognition, citation, and international accessibility of the research work." },
-      { "title": "Scopus Indexing Opportunity", "desc": "Selected high-quality and extended papers will be considered for publication in Scopus indexed journals, subject to journal scope, editorial policy, and an additional peer-review process." },
-      { "title": "Web of Science Indexing", "desc": "Outstanding research contributions may be recommended for publication in journals indexed in the Web of Science database after editorial review and quality evaluation." },
+      { "title": "ISBN Conference Proceedings", "desc": "All accepted and registered papers will be published in the official conference proceedings with a valid ISBN Number. This ensures proper academic recognition, citation, and international accessibility of the research work.", "logoUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/image.png" },
+      { "title": "Scopus Indexing Opportunity", "desc": "Selected high-quality and extended papers will be considered for publication in Scopus indexed journals, subject to journal scope, editorial policy, and an additional peer-review process.", "logoUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/image(1).png" },
+      { "title": "Web of Science Indexing", "desc": "Outstanding research contributions may be recommended for publication in journals indexed in the Web of Science database after editorial review and quality evaluation.", "logoUrl": "/assets/ICAESET-2026%20_%20Eminsphere_files/image(2).png" },
       { "title": "Quality Peer Review Process", "desc": "All submissions will undergo a double-blind peer-review process conducted by an international panel of researchers, academicians, and industry experts to ensure high scientific quality, originality, and relevance." }
     ]
   },
@@ -228,7 +235,8 @@ export const recentConferences: Record<string, RecentConferenceData> = {
     "chiefGuest": {
       "name": "Prof. (Dr.) Tanaji Dabade",
       "title": "Head of Institutions & Director",
-      "affiliation": "Navsahyadri Education Society Group of Institutions, Pune, India"
+      "affiliation": "Navsahyadri Education Society Group of Institutions, Pune, India",
+      "imageUrl": "/assets/ICNSE-26%20_%20Eminsphere_files/30814e_85d4d1b8288f40749bae07d46b5a9683~mv2.jpeg"
     },
     "tracks": [
       "Artificial Intelligence & Data Science - Machine Learning, Deep Learning, Computer Vision, NLP",
@@ -237,17 +245,17 @@ export const recentConferences: Record<string, RecentConferenceData> = {
       "Emerging Technologies - IoT, Robotics, Quantum Computing"
     ],
     "keynoteSpeakers": [
-      { "name": "Dr. Yulia Kryvenko", "title": "Assistant Professor", "affiliation": "Istanbul Sabahattin Zaim University, France" },
-      { "name": "Prof. Dr. Alexander Bull", "title": "Professor", "affiliation": "IU International University, Germany" },
-      { "name": "Manuja Bandal", "title": "Researcher", "affiliation": "Software Engineer, Innovator, and STEM Mentor, USA" },
-      { "name": "Dr. Walida Ounruean", "title": "International Education Ambassador", "affiliation": "Faculty of Education, Uttaradit Rajabhat University, Thailand" },
-      { "name": "Ezinne Esther Arisa", "title": "Founder", "affiliation": "Candy Rainbow Creations, South Africa" },
-      { "name": "Harikrishnan Ramakrishna Pillai", "title": "Researcher", "affiliation": "AI & Distributed Systems, USA" },
-      { "name": "Mouhssin Ait El Mouden", "title": "Researcher", "affiliation": "Faculty of Letters, Ibn Tofail University, Morocco" },
-      { "name": "Ponsankar Shanmugam S", "title": "Researcher", "affiliation": "Innovation in Distributed & AI Systems, USA" },
-      { "name": "Dr. Entela Shkodrani", "title": "Associate Professor, Clinic of Dermatology", "affiliation": "University Hospital Center, Tirana, Albania" },
-      { "name": "Sanjay Poddar", "title": "Sr. Exec Cloud & SASE Strategist", "affiliation": "USA" },
-      { "name": "Dr. Elizabeth Sarah George", "title": "Assistant Professor", "affiliation": "RV University, India" }
+      { "name": "Dr. Yulia Kryvenko", "title": "Assistant Professor", "affiliation": "Istanbul Sabahattin Zaim University, France", "imageUrl": "/assets/ICNSE-26%20_%20Eminsphere_files/30814e_1cc9e627ca8342d59e4122b9240e638d~mv2.png" },
+      { "name": "Prof. Dr. Alexander Bull", "title": "Professor", "affiliation": "IU International University, Germany", "imageUrl": "/assets/ICNSE-26%20_%20Eminsphere_files/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
+      { "name": "Manuja Bandal", "title": "Researcher", "affiliation": "Software Engineer, Innovator, and STEM Mentor, USA", "imageUrl": "/assets/ICNSE-26%20_%20Eminsphere_files/30814e_871155ce5f72470c95772f064886f06e~mv2.jpeg" },
+      { "name": "Dr. Walida Ounruean", "title": "International Education Ambassador", "affiliation": "Faculty of Education, Uttaradit Rajabhat University, Thailand", "imageUrl": "/assets/ICNSE-26%20_%20Eminsphere_files/30814e_73060115e6b34cb882286565559ff5e2~mv2.jpeg" },
+      { "name": "Ezinne Esther Arisa", "title": "Founder", "affiliation": "Candy Rainbow Creations, South Africa", "imageUrl": "/assets/ICNSE-26%20_%20Eminsphere_files/502b14_3adc2682f9064817b4728eca9cd4a0b1~mv2.jpeg" },
+      { "name": "Harikrishnan Ramakrishna Pillai", "title": "Researcher", "affiliation": "AI & Distributed Systems, USA", "imageUrl": "/assets/ICNSE-26%20_%20Eminsphere_files/30814e_73c89054e75f4b3bb9bf0c838418960f~mv2.png" },
+      { "name": "Mouhssin Ait El Mouden", "title": "Researcher", "affiliation": "Faculty of Letters, Ibn Tofail University, Morocco", "imageUrl": "/assets/ICNSE-26%20_%20Eminsphere_files/30814e_b0c50d221b41483fa5ab8bfb50f719e5~mv2.avif" },
+      { "name": "Ponsankar Shanmugam S", "title": "Researcher", "affiliation": "Innovation in Distributed & AI Systems, USA", "imageUrl": "/assets/ICNSE-26%20_%20Eminsphere_files/30814e_4a4018f89ef94597bca4b870f45069b0~mv2.jpeg" },
+      { "name": "Dr. Entela Shkodrani", "title": "Associate Professor, Clinic of Dermatology", "affiliation": "University Hospital Center, Tirana, Albania", "imageUrl": "/assets/ICNSE-26%20_%20Eminsphere_files/30814e_1729c779d5bf4cbc9d0b4b2e1d51e148~mv2.jpeg" },
+      { "name": "Sanjay Poddar", "title": "Sr. Exec Cloud & SASE Strategist", "affiliation": "USA", "imageUrl": "/assets/ICNSE-26%20_%20Eminsphere_files/30814e_d78a35a5685040edb9f9ad90272fa830~mv2.jpeg" },
+      { "name": "Dr. Elizabeth Sarah George", "title": "Assistant Professor", "affiliation": "RV University, India", "imageUrl": "/assets/ICNSE-26%20_%20Eminsphere_files/30814e_821d66fc49f64b71a44eb747ef514580~mv2.jpeg" }
     ],
     "conferenceExperts": [
       { "name": "Andreza Malena Guedes da Costa Silva", "title": "Conference Delegate", "affiliation": "IPM, Brazil" },
@@ -291,23 +299,23 @@ export const recentConferences: Record<string, RecentConferenceData> = {
     "dateAndMode": "15 February 2026 | Hybrid Mode (Online + Offline)",
     "isbn": "978-81-996717-5-5",
     "keynoteSpeakers": [
-      { "name": "Dr. Walida Ounruean", "title": "International Education Ambassador", "affiliation": "Faculty of Education, Uttaradit Rajabhat University, Thailand" },
-      { "name": "Ezinne Esther Arisa", "title": "Founder", "affiliation": "Candy Rainbow Creations, South Africa" },
-      { "name": "Mrugendra Madalagi", "title": "Independent Researcher & Solution Architect", "affiliation": "Technology Solutions & Architecture, USA" },
-      { "name": "RC Holmes", "title": "Entrepreneur & Business Speaker", "affiliation": "CEO, Wealthy Results LLC, USA" },
-      { "name": "Sri Harsha Anand Pushkala", "title": "Director - Fraud Strategy & Analytics", "affiliation": "Atlanticus Holdings, Senior Member IEEE, USA" },
-      { "name": "Dr. Aida Mehrad", "title": "Academic Director & Associate Professor", "affiliation": "C3S Business School, Dual PhD | DBA, Spain" },
-      { "name": "Dr. Mehwish (Mishy) Rashid", "title": "DHSc", "affiliation": "Keiser University, USA" },
-      { "name": "Nadine Zeinoun", "title": "Master Certified Coach", "affiliation": "President, ICF Chapter Ottawa, Facilitator, Saint Joseph University, Lebanon" },
-      { "name": "Prathan Raghavan", "title": "Director - Product Management", "affiliation": "Santander, GenAI & Automation, USA" },
-      { "name": "Sudeep Annappa Shanubhog", "title": "Independent Researcher", "affiliation": "Affiliate: Tential Inc., North Carolina, USA" },
-      { "name": "Utkarsh Sharma", "title": "Independent Researcher & AI-FinTech Leader", "affiliation": "Artificial Intelligence - FinTech Innovation, USA" },
-      { "name": "Shyam Kumar Gajula", "title": "Endpoint & Identity Security Engineer", "affiliation": "Cybersecurity Researcher, United States" },
-      { "name": "Yesha Patel", "title": "Senior Solution Architect", "affiliation": "United States" }
+      { "name": "Dr. Walida Ounruean", "title": "International Education Ambassador", "affiliation": "Faculty of Education, Uttaradit Rajabhat University, Thailand", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/30814e_73060115e6b34cb882286565559ff5e2~mv2.jpeg" },
+      { "name": "Ezinne Esther Arisa", "title": "Founder", "affiliation": "Candy Rainbow Creations, South Africa", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/502b14_3adc2682f9064817b4728eca9cd4a0b1~mv2.jpeg" },
+      { "name": "Mrugendra Madalagi", "title": "Independent Researcher & Solution Architect", "affiliation": "Technology Solutions & Architecture, USA", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/30814e_91f0775a99254778a49bbb97171dfadb~mv2.jpeg" },
+      { "name": "RC Holmes", "title": "Entrepreneur & Business Speaker", "affiliation": "CEO, Wealthy Results LLC, USA", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/502b14_25f6163bd55c4354a06f544c5e8ffa9e~mv2.png" },
+      { "name": "Sri Harsha Anand Pushkala", "title": "Director - Fraud Strategy & Analytics", "affiliation": "Atlanticus Holdings, Senior Member IEEE, USA", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/30814e_cb5e002dc53f465688ce32280a1a93f3~mv2.jpeg" },
+      { "name": "Dr. Aida Mehrad", "title": "Academic Director & Associate Professor", "affiliation": "C3S Business School, Dual PhD | DBA, Spain", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/502b14_2f32591e100346daa035a4aaf27ef7d7~mv2.jpeg" },
+      { "name": "Dr. Mehwish (Mishy) Rashid", "title": "DHSc", "affiliation": "Keiser University, USA", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/30814e_d030e1dbf7ef4028909beba2b99a69be~mv2.jpeg" },
+      { "name": "Nadine Zeinoun", "title": "Master Certified Coach", "affiliation": "President, ICF Chapter Ottawa, Facilitator, Saint Joseph University, Lebanon", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg" },
+      { "name": "Prathap Raghavan", "title": "Director - Product Management", "affiliation": "Santander, GenAI & Automation, USA", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/30814e_5167abbef7fa4549b18fcf6bdf6bbdbd~mv2.png" },
+      { "name": "Sudeep Annappa Shanubhog", "title": "Independent Researcher", "affiliation": "Affiliate: Tential Inc., North Carolina, USA", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/30814e_d49cf5c47ba64a629f0bb3c0618967e6~mv2.jpeg" },
+      { "name": "Utkarsh Sharma", "title": "Independent Researcher & AI-FinTech Leader", "affiliation": "Artificial Intelligence - FinTech Innovation, USA", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/30814e_150514da48cb41598e25829a5c686936~mv2.jpeg" },
+      { "name": "Shyam Kumar Gajula", "title": "Endpoint & Identity Security Engineer", "affiliation": "Cybersecurity Researcher, United States", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/30814e_c5f4a33e93c34938bf4f267806ac057c~mv2.jpg" },
+      { "name": "Yesha Patel", "title": "Senior Solution Architect", "affiliation": "United States", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/30814e_8bd1ad53a6504ac999bc2116cebfe346~mv2.jpg" }
     ],
     "conferenceExperts": [
-      { "name": "Dr. S. M. Shiyekar", "title": "Dean - Research, Development and Grants", "affiliation": "D. Y. Patil College of Engineering, Akurdi, Pune, India" },
-      { "name": "Dr. Prabhat Thakur", "title": "Associate Professor", "affiliation": "Alliance School of Applied Engineering, Bengaluru, Karnataka, India" }
+      { "name": "Dr. S. M. Shiyekar", "title": "Dean - Research, Development and Grants", "affiliation": "D. Y. Patil College of Engineering, Akurdi, Pune, India", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/30814e_e367411df1ea4aaab1c8c9c5e72ecb9e~mv2.jpeg" },
+      { "name": "Dr. Prabhat Thakur", "title": "Associate Professor", "affiliation": "Alliance School of Applied Engineering, Bengaluru, Karnataka, India", "imageUrl": "/assets/ICTET-26%20_%20Eminsphere_files/30814e_1f4ecdf8200e4fa688c5125e8d537663~mv2.webp" }
     ],
     "tracks": [
       "AI & Machine Learning - Generative AI, NLP, Deep Learning",
@@ -354,15 +362,15 @@ export const recentConferences: Record<string, RecentConferenceData> = {
       "Social Innovation"
     ],
     "keynoteSpeakers": [
-      { "name": "Dr. Nadia Adnan", "title": "Assistant Professor & Research Scientist", "affiliation": "Prince Mohammad Bin Fahd University, Saudi Arabia" },
-      { "name": "Dr. Rana El Khawand", "title": "Technical Expert", "affiliation": "Saida Risk Mapping Project, UN-Habitat" },
-      { "name": "Vijayachandar Sanikal", "title": "IEEE Senior Member & Independent Researcher", "affiliation": "AI-Driven Automotive Digital Twin & Simulation, USA" },
-      { "name": "Bhavya Mehta", "title": "Independent Researcher", "affiliation": "Network Security and Cloud Networking, USA" },
-      { "name": "Lawrence Mazaki Mashati", "title": "Community Development Professional", "affiliation": "International Missionary for Christ, Nairobi, Kenya" },
-      { "name": "Dr. Jitendra Pandey, FHEA", "title": "Senior Faculty Member", "affiliation": "Middle East College (Affiliated to Coventry University), Oman" },
-      { "name": "Mr. Satyabrata Pradhan", "title": "Automotive Engineer & Program Leader", "affiliation": "IEEE Senior Member, USA" },
-      { "name": "Dr. Thillainayagam Sankaravel", "title": "President", "affiliation": "MedArb International, India" },
-      { "name": "Dr. Walida Ounruean", "title": "International Education Ambassador", "affiliation": "Faculty of Education, Uttaradit Rajabhat University, Thailand" }
+      { "name": "Dr. Nadia Adnan", "title": "Assistant Professor & Research Scientist", "affiliation": "Prince Mohammad Bin Fahd University, Saudi Arabia", "imageUrl": "/assets/ICMESS-26%20_%20Eminsphere_files/30814e_68479290bb114146b46b56f021a75155~mv2.png" },
+      { "name": "Dr. Rana El Khawand", "title": "Technical Expert", "affiliation": "Saida Risk Mapping Project, UN-Habitat", "imageUrl": "/assets/ICMESS-26%20_%20Eminsphere_files/502b14_e3b96c6fde384f0ba16dd14be8710af3~mv2.png" },
+      { "name": "Vijayachandar Sanikal", "title": "IEEE Senior Member & Independent Researcher", "affiliation": "AI-Driven Automotive Digital Twin & Simulation, USA", "imageUrl": "/assets/ICMESS-26%20_%20Eminsphere_files/502b14_0269601f3e7b4a9ba877aec373e7f5ee~mv2.png" },
+      { "name": "Bhavya Mehta", "title": "Independent Researcher", "affiliation": "Network Security and Cloud Networking, USA", "imageUrl": "/assets/ICMESS-26%20_%20Eminsphere_files/502b14_89220e1abdb549c79f1981b88df127d0~mv2.png" },
+      { "name": "Lawrence Mazaki Mashati", "title": "Community Development Professional", "affiliation": "International Missionary for Christ, Nairobi, Kenya", "imageUrl": "/assets/ICMESS-26%20_%20Eminsphere_files/502b14_ec9a529cdc7c4e6e852442836e4fed51~mv2.png" },
+      { "name": "Dr. Jitendra Pandey, FHEA", "title": "Senior Faculty Member", "affiliation": "Middle East College (Affiliated to Coventry University), Oman", "imageUrl": "/assets/ICMESS-26%20_%20Eminsphere_files/30814e_bf66c69035bc4e41bc50c2345187c6f2~mv2.jpeg" },
+      { "name": "Mr. Satyabrata Pradhan", "title": "Automotive Engineer & Program Leader", "affiliation": "IEEE Senior Member, USA", "imageUrl": "/assets/ICMESS-26%20_%20Eminsphere_files/502b14_603e64a9735f4b8d844465896d5fba01~mv2.png" },
+      { "name": "Dr. Thillainayagam Sankaravel", "title": "President", "affiliation": "MedArb International, India", "imageUrl": "/assets/ICMESS-26%20_%20Eminsphere_files/502b14_798238cd07c2464b8935f17ff4bc40be~mv2.png" },
+      { "name": "Dr. Walida Ounruean", "title": "International Education Ambassador", "affiliation": "Faculty of Education, Uttaradit Rajabhat University, Thailand", "imageUrl": "/assets/ICMESS-26%20_%20Eminsphere_files/30814e_73060115e6b34cb882286565559ff5e2~mv2.jpeg" }
     ],
     "importantDates": [
       { "label": "Abstract Submission", "date": "January 5, 2026" },
@@ -393,25 +401,25 @@ export const recentConferences: Record<string, RecentConferenceData> = {
     "location": "Zurich, Switzerland",
     "isbn": "978-81-998310-3-8",
     "keynoteSpeakers": [
-      { "name": "Mr. Saptarshi Debnath", "title": "Independent Researcher", "affiliation": "Scalable Systems & Cloud Architecture, USA" },
-      { "name": "Dr. Ruth Abiola Adimula", "title": "Associate Professor", "affiliation": "University of Ilorin, Nigeria" },
-      { "name": "Mr. Rajaguru Ganesan", "title": "Independent Researcher", "affiliation": "System Modernization, Cloud & Microservices, USA" },
-      { "name": "Dr. Ratna Raja Kumar Jambi", "title": "Principal", "affiliation": "G S Moze College of Engineering, India" },
-      { "name": "Dr. Walida Ounruean", "title": "International Education Ambassador", "affiliation": "Faculty of Education, Uttaradit Rajabhat University, Thailand" },
-      { "name": "Mr. Satish Kabade", "title": "Product Technical Expert", "affiliation": "Independent Researcher, New York, USA" },
-      { "name": "Dr. Sadia Nazneen Karobi", "title": "Assistant Professor", "affiliation": "Dept. of Environmental Science and Management, School of Environment and Life Sciences" },
-      { "name": "Mr. Amber Rastogi", "title": "Independent Researcher", "affiliation": "Distributed Systems & Cloud Computing, USA" },
-      { "name": "Dr. Tiansheng Yang", "title": "Faculty Member", "affiliation": "University of South Wales, United Kingdom" },
-      { "name": "Karthikeyan Srinivasan", "title": "Independent Researcher", "affiliation": "Software Engineering, System Architecture & Cloud-Native Solutions, USA" },
-      { "name": "Dr. Prashant Patil", "title": "Dean Academic", "affiliation": "NGI's College of Engineering, Pune, India" },
-      { "name": "Hemang Upadhyay", "title": "Independent Researcher", "affiliation": "AI, E-commerce & Analytics, USA" }
+      { "name": "Mr. Saptarshi Debnath", "title": "Independent Researcher", "affiliation": "Scalable Systems & Cloud Architecture, USA", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_1b4918e0fd854271a429a912bcb71060~mv2.jpeg" },
+      { "name": "Dr. Ruth Abiola Adimula", "title": "Associate Professor", "affiliation": "University of Ilorin, Nigeria", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_164d8ef597e74e1a89f4e800e7c38a3f~mv2.jpeg" },
+      { "name": "Mr. Rajaguru Ganesan", "title": "Independent Researcher", "affiliation": "System Modernization, Cloud & Microservices, USA", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_7e8d8afea4824824b0a36dc883235730~mv2.jpeg" },
+      { "name": "Dr. Ratna Raja Kumar Jambi", "title": "Principal", "affiliation": "G S Moze College of Engineering, India", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_68b76caedcdf48b6988367c0c06ab3c8~mv2.jpeg" },
+      { "name": "Dr. Walida Ounruean", "title": "International Education Ambassador", "affiliation": "Faculty of Education, Uttaradit Rajabhat University, Thailand", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_73060115e6b34cb882286565559ff5e2~mv2.jpeg" },
+      { "name": "Mr. Satish Kabade", "title": "Product Technical Expert", "affiliation": "Independent Researcher, New York, USA", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_a31d532fb603465e846aceccb082827c~mv2.jpeg" },
+      { "name": "Dr. Sadia Nazneen Karobi", "title": "Assistant Professor", "affiliation": "Dept. of Environmental Science and Management, School of Environment and Life Sciences", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_d7b9cf9312084baa9e85220ae3d0f383~mv2.png" },
+      { "name": "Mr. Amber Rastogi", "title": "Independent Researcher", "affiliation": "Distributed Systems & Cloud Computing, USA", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_e16da5320136479198a3e09ce0193ff2~mv2.jpeg" },
+      { "name": "Dr. Tiansheng Yang", "title": "Faculty Member", "affiliation": "University of South Wales, United Kingdom", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_ab0670f34d354ffabafcaa2849d78701~mv2.jpg" },
+      { "name": "Karthikeyan Srinivasan", "title": "Independent Researcher", "affiliation": "Software Engineering, System Architecture & Cloud-Native Solutions, USA", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_57facf9d3e004a5794bee03a1ce9feb6~mv2.jpeg" },
+      { "name": "Dr. Prashant Patil", "title": "Dean Academic", "affiliation": "NGI's College of Engineering, Pune, India", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_c250e513d1c9430aac76d8bdd850e13e~mv2.jpg" },
+      { "name": "Hemang Upadhyay", "title": "Independent Researcher", "affiliation": "AI, E-commerce & Analytics, USA", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_d8f3f76a4383421eb967c779a89ac17f~mv2.jpeg" }
     ],
     "conferenceExperts": [
-      { "name": "Katarzyna Antosz", "title": "Associate Professor", "affiliation": "Rzeszow University of Technology, Rzeszow, Podkarpackie, Poland" },
-      { "name": "Mouhssin Ait El Mouden", "title": "Researcher", "affiliation": "Research Laboratory, Faculty of Letters, Ibn Tofail University, Kenitra, Morocco" },
-      { "name": "Dr. Firas Zeidan", "title": "Researcher & Professor", "affiliation": "Higher Education & Research, Lebanon" },
-      { "name": "Dr. Reshma Sujal Sonar", "title": "Assistant Professor", "affiliation": "Department of Computer Engineering & Technology, MIT World Peace University (MIT-WPU), Pune, India" },
-      { "name": "Dr. Deepthi D Kulkarni", "title": "Head of Department & Assistant Professor", "affiliation": "Department of Electronics & Telecommunication (E&TC), KJEI's Trinity Academy of Engineering, Pune, India" }
+      { "name": "Katarzyna Antosz", "title": "Associate Professor", "affiliation": "Rzeszow University of Technology, Rzeszow, Podkarpackie, Poland", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_d511f14d64114d2785f3aa065a35cbb9~mv2.jpeg" },
+      { "name": "Mouhssin Ait El Mouden", "title": "Researcher", "affiliation": "Research Laboratory, Faculty of Letters, Ibn Tofail University, Kenitra, Morocco", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_5cbd6440dc0b407c8d10b4d96ab8558f~mv2.jpeg" },
+      { "name": "Dr. Firas Zeidan", "title": "Researcher & Professor", "affiliation": "Higher Education & Research, Lebanon", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_d725b17d6d374b3abf1081771e55f53f~mv2.jpeg" },
+      { "name": "Dr. Reshma Sujal Sonar", "title": "Assistant Professor", "affiliation": "Department of Computer Engineering & Technology, MIT World Peace University (MIT-WPU), Pune, India", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_26a2db6840c04f3398f7443694e6a48a~mv2.jpeg" },
+      { "name": "Dr. Deepthi D Kulkarni", "title": "Head of Department & Assistant Professor", "affiliation": "Department of Electronics & Telecommunication (E&TC), KJEI's Trinity Academy of Engineering, Pune, India", "imageUrl": "/assets/ICASIT-26%20_%20Eminsphere_files/30814e_60eb481c5c0a4181b81e5a41555004d4~mv2.jpg" }
     ],
     "tracks": [
       "AI & Machine Learning",
@@ -470,22 +478,22 @@ export const recentConferences: Record<string, RecentConferenceData> = {
       "Social Innovation & Humanities"
     ],
     "keynoteSpeakers": [
-      { "name": "Dr. Prodhan Mahbub Ibna Seraj", "title": "Associate Professor", "affiliation": "Department of English, American International University-Bangladesh" },
-      { "name": "Dr. Nadia Adnan", "title": "Assistant Professor & Research Scientist", "affiliation": "Prince Mohammad Bin Fahd University, Saudi Arabia" },
-      { "name": "Dr. Muhammad Tahir Jan", "title": "Associate Professor", "affiliation": "International Islamic University Malaysia" },
-      { "name": "Dr. Ayoub Regragui", "title": "Doctorate in Applied Linguistics", "affiliation": "Mohammed V University, Rabat, Morocco" },
-      { "name": "Nilesh Charankar", "title": "AI Technology Leader", "affiliation": "Independent Researcher, USA" },
-      { "name": "Veeramani Sampathkumar", "title": "Fintech Technology Leader", "affiliation": "Independent Researcher, USA" },
-      { "name": "Hicham ELKHOUAJA", "title": "Researcher", "affiliation": "Hassan I University, Settat, Morocco" },
-      { "name": "Mr. Rakesh Ramakrishna Pai", "title": "Independent Researcher", "affiliation": "Franklin, TN, USA" },
-      { "name": "Jawaher Al-Zeidi", "title": "English Language Lecturer", "affiliation": "University of Technology and Applied Sciences, Oman" },
-      { "name": "Dr. Ratna Raja Kumar Jambi", "title": "Principal", "affiliation": "Genba Sopanrao Moze College of Engineering, Balewadi, Pune" },
-      { "name": "Yesha Patel", "title": "Senior Solution Architect", "affiliation": "United States" },
-      { "name": "Yukti Goyal", "title": "Lead Software Engineer", "affiliation": "Tampa, FL, USA" }
+      { "name": "Dr. Prodhan Mahbub Ibna Seraj", "title": "Associate Professor", "affiliation": "Department of English, American International University-Bangladesh", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/Pic.jpeg" },
+      { "name": "Dr. Nadia Adnan", "title": "Assistant Professor & Research Scientist", "affiliation": "Prince Mohammad Bin Fahd University, Saudi Arabia", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/image.png" },
+      { "name": "Dr. Muhammad Tahir Jan", "title": "Associate Professor", "affiliation": "International Islamic University Malaysia", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/Tahir.jpeg" },
+      { "name": "Dr. Ayoub Regragui", "title": "Doctorate in Applied Linguistics", "affiliation": "Mohammed V University, Rabat, Morocco", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/Updated.jpeg" },
+      { "name": "Nilesh Charankar", "title": "AI Technology Leader", "affiliation": "Independent Researcher, USA", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/Mr%20nilesh.jpeg" },
+      { "name": "Veeramani Sampathkumar", "title": "Fintech Technology Leader", "affiliation": "Independent Researcher, USA", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/Veera.jpeg" },
+      { "name": "Hicham ELKHOUAJA", "title": "Researcher", "affiliation": "Hassan I University, Settat, Morocco", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/Hicham%20ELKHOUAJA.jpeg" },
+      { "name": "Mr. Rakesh Ramakrishna Pai", "title": "Independent Researcher", "affiliation": "Franklin, TN, USA", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/Rakesh%20pai.jpeg" },
+      { "name": "Jawaher Al-Zeidi", "title": "English Language Lecturer", "affiliation": "University of Technology and Applied Sciences, Oman", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/Jawaher%20Al-Zeidi.jpg" },
+      { "name": "Dr. Ratna Raja Kumar Jambi", "title": "Principal", "affiliation": "Genba Sopanrao Moze College of Engineering, Balewadi, Pune", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/Principal.jpeg" },
+      { "name": "Yesha Patel", "title": "Senior Solution Architect", "affiliation": "United States", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/Yesha%20Patel_IBM.jpg" },
+      { "name": "Yukti Goyal", "title": "Lead Software Engineer", "affiliation": "Tampa, FL, USA", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/Yukti.jpg" }
     ],
     "conferenceExperts": [
-      { "name": "Dr. Kailash Nath Tripathi", "title": "Session Chair", "affiliation": "Dnyan Prasad Global University, Pimpri, Pune, India" },
-      { "name": "Prof. Indranil Mukherjee", "title": "Session Chair, Head AIML", "affiliation": "NESGI, India" }
+      { "name": "Dr. Kailash Nath Tripathi", "title": "Session Chair", "affiliation": "Dnyan Prasad Global University, Pimpri, Pune, India", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/30814e_5ff83a19546047ceadcbd901c28e31b4~mv2.jpeg" },
+      { "name": "Prof. Indranil Mukherjee", "title": "Session Chair, Head AIML", "affiliation": "NESGI, India", "imageUrl": "/assets/ICMDIA-25%20_%20Eminsphere_files/30814e_8045774ce1b0491da003faecde7c7200~mv2.jpeg" }
     ],
     "importantDates": [
       { "label": "Abstract Submission", "date": "November 10, 2025" },
@@ -514,15 +522,15 @@ export const recentConferences: Record<string, RecentConferenceData> = {
     "dateAndMode": "Barcelona, Spain | November 16, 2025 | Hybrid Mode",
     "isbn": "978-81-994624-5-8",
     "keynoteSpeakers": [
-      { "name": "Dr. Zoha Rahman", "title": "Founder and Country Director, Centre for Big Data & Machine Learning", "affiliation": "Big Data Consultant, Bloomberg, USA" },
-      { "name": "Dr. Dina A. Alkhodary", "title": "Associate Professor, Faculty of Business", "affiliation": "Middle East University, Amman, Jordan" },
-      { "name": "Mr. Akshay Sharma", "title": "Technology Leader, Independent Researcher, Pension Systems Expert", "affiliation": "USA" },
-      { "name": "Dr. Firas Zeidan", "title": "Researcher and Professor", "affiliation": "Lebanon" },
-      { "name": "Dr. Ranà El Khawand", "title": "Technical Expert, Saida Risk Mapping Project", "affiliation": "UN-Habitat" },
-      { "name": "Prof. Dr. Alexander Bull", "title": "Faculty of Business Administration", "affiliation": "IU International University of Applied Sciences, Germany" },
-      { "name": "Mouhssin Ait El Mouden", "title": "Research Laboratory, Faculty of Letters", "affiliation": "Ibn Tofail University, Kenitra, Morocco" },
-      { "name": "Prof. Neha Singh", "title": "Assistant Professor in E&TC", "affiliation": "PEG's ISB&M College of Engineering, Pune" },
-      { "name": "Prof. Shweta N. Banait", "title": "Assistant Professor, Dept. of AI & Data Science", "affiliation": "D. Y. Patil College of Engineering, Pune, India" }
+      { "name": "Dr. Zoha Rahman", "title": "Founder and Country Director, Centre for Big Data & Machine Learning", "affiliation": "Big Data Consultant, Bloomberg, USA", "imageUrl": "/assets/ICETSGC-25%20_%20Eminsphere_files/30814e_6fe3056846724889b2741a170caad3a8~mv2.jpeg" },
+      { "name": "Dr. Dina A. Alkhodary", "title": "Associate Professor, Faculty of Business", "affiliation": "Middle East University, Amman, Jordan", "imageUrl": "/assets/ICETSGC-25%20_%20Eminsphere_files/30814e_1feb45bda81f4dcdb4b55439a6f8d65a~mv2.jpg" },
+      { "name": "Mr. Akshay Sharma", "title": "Technology Leader, Independent Researcher, Pension Systems Expert", "affiliation": "USA", "imageUrl": "/assets/ICETSGC-25%20_%20Eminsphere_files/30814e_3aef18109d86468da8e5fbbf55d37268~mv2.jpg" },
+      { "name": "Dr. Firas Zeidan", "title": "Researcher and Professor", "affiliation": "Lebanon", "imageUrl": "/assets/ICETSGC-25%20_%20Eminsphere_files/30814e_d725b17d6d374b3abf1081771e55f53f~mv2.jpeg" },
+      { "name": "Dr. Ranà El Khawand", "title": "Technical Expert, Saida Risk Mapping Project", "affiliation": "UN-Habitat", "imageUrl": "/assets/ICETSGC-25%20_%20Eminsphere_files/30814e_c0812b3e98ff416db27e799833d12e86~mv2.jpeg" },
+      { "name": "Prof. Dr. Alexander Bull", "title": "Faculty of Business Administration", "affiliation": "IU International University of Applied Sciences, Germany", "imageUrl": "/assets/ICETSGC-25%20_%20Eminsphere_files/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
+      { "name": "Mouhssin Ait El Mouden", "title": "Research Laboratory, Faculty of Letters", "affiliation": "Ibn Tofail University, Kenitra, Morocco", "imageUrl": "/assets/ICETSGC-25%20_%20Eminsphere_files/30814e_5cbd6440dc0b407c8d10b4d96ab8558f~mv2.jpeg" },
+      { "name": "Prof. Neha Singh", "title": "Assistant Professor in E&TC", "affiliation": "PEG's ISB&M College of Engineering, Pune", "imageUrl": "/assets/ICETSGC-25%20_%20Eminsphere_files/30814e_f258ef8fd1a74b9b9c778f12bcdc9128~mv2.jpeg" },
+      { "name": "Prof. Shweta N. Banait", "title": "Assistant Professor, Dept. of AI & Data Science", "affiliation": "D. Y. Patil College of Engineering, Pune, India", "imageUrl": "/assets/ICETSGC-25%20_%20Eminsphere_files/30814e_110f0c5464f34aea993c7055dac271b2~mv2.jpeg" }
     ],
     "whyAttend": [
       { "title": "Global Research Platform", "desc": "Connect with researchers and professionals from multiple countries and share innovative research ideas.", "icon": "globe" },
@@ -546,23 +554,23 @@ export const recentConferences: Record<string, RecentConferenceData> = {
     "location": "Malmo, Sweden",
     "isbn": "978-93-344-3140-7",
     "keynoteSpeakers": [
-      { "name": "Dr. Joe Perez", "title": "Senior Systems Specialist & Team Leader", "affiliation": "NC Department of Health & Human Services, Raleigh, NC, USA" },
-      { "name": "Mr. Satish Kabade", "title": "Product Technical Expert, Independent Researcher", "affiliation": "New York, USA" },
-      { "name": "Gregg Clunis", "title": "Founder, Kojo", "affiliation": "United States" },
-      { "name": "Nomi Khedawala", "title": "Sr. Technical Program Manager, Reddit", "affiliation": "San Francisco, California" },
-      { "name": "Mr. Bhushan Balkrishna Chaudhari", "title": "Senior Technology Lead, Researcher", "affiliation": "New Jersey, USA" },
-      { "name": "Jim Saliba", "title": "Principal Consultant, James Saliba Inc", "affiliation": "San Jose, California" },
-      { "name": "Dr. Walida Ounruean", "title": "Curriculum and Instruction, Faculty of Education", "affiliation": "Uttaradit Rajabhat University, Thailand" },
-      { "name": "Dr. Tiansheng Yang", "title": "Faculty Member", "affiliation": "University of South Wales, United Kingdom" },
-      { "name": "Mr. Sudipkumar Ghanvat", "title": "Sr. Director & Head - Data & AI", "affiliation": "VRIO Digital, United States" },
-      { "name": "Anup Kagalkar", "title": "Independent Researcher, Product Technical Expert", "affiliation": "United States" }
+      { "name": "Dr. Joe Perez", "title": "Senior Systems Specialist & Team Leader", "affiliation": "NC Department of Health & Human Services, Raleigh, NC, USA", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_2e4bd98eb15e408fa1470c541ce8e786~mv2.jpg" },
+      { "name": "Mr. Satish Kabade", "title": "Product Technical Expert, Independent Researcher", "affiliation": "New York, USA", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_a31d532fb603465e846aceccb082827c~mv2.jpeg" },
+      { "name": "Gregg Clunis", "title": "Founder, Kojo", "affiliation": "United States", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_5c95cc3899d64319998d594852b99123~mv2.jpeg" },
+      { "name": "Nomi Khedawala", "title": "Sr. Technical Program Manager, Reddit", "affiliation": "San Francisco, California", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_4dddbaf5110540e7b8c0d5ed7826a8e5~mv2.jpeg" },
+      { "name": "Mr. Bhushan Balkrishna Chaudhari", "title": "Senior Technology Lead, Researcher", "affiliation": "New Jersey, USA", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_80c3ba4b5ad34cc1817090e1e30c7b8e~mv2.jpeg" },
+      { "name": "Jim Saliba", "title": "Principal Consultant, James Saliba Inc", "affiliation": "San Jose, California", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_45d1f903e57d425cb88addf2bdbec7be~mv2.jpeg" },
+      { "name": "Dr. Walida Ounruean", "title": "Curriculum and Instruction, Faculty of Education", "affiliation": "Uttaradit Rajabhat University, Thailand", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_73060115e6b34cb882286565559ff5e2~mv2.jpeg" },
+      { "name": "Dr. Tiansheng Yang", "title": "Faculty Member", "affiliation": "University of South Wales, United Kingdom", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_ab0670f34d354ffabafcaa2849d78701~mv2.jpg" },
+      { "name": "Mr. Sudipkumar Ghanvat", "title": "Sr. Director & Head - Data & AI", "affiliation": "VRIO Digital, United States", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_72dbfb478bd540e9abbca0d3811dfe48~mv2.jpeg" },
+      { "name": "Anup Kagalkar", "title": "Independent Researcher, Product Technical Expert", "affiliation": "United States", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_38bae8e1c58e4626b639ff27e74b615f~mv2.jpeg" }
     ],
     "conferenceExperts": [
-      { "name": "Prof. Indranil Mukherjee", "title": "Head, AIML", "affiliation": "NESGI, India" },
-      { "name": "Mr. Sam Lawe", "title": "Infrastructure Manager, APAC", "affiliation": "Navico Group, Auckland" },
-      { "name": "Mrs. Meryem Gurel", "title": "Founder, Point Energy Intelligence Services", "affiliation": "Istanbul, Turkey" },
-      { "name": "Katarzyna Antosz", "title": "Associate Professor", "affiliation": "Rzeszow University of Technology, Poland" },
-      { "name": "Dr. Nilesh Vitthal Limbore", "title": "Associate Professor & HOD BBA", "affiliation": "Navsahayadri Group of Institutions, India" }
+      { "name": "Prof. Indranil Mukherjee", "title": "Head, AIML", "affiliation": "NESGI, India", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_8045774ce1b0491da003faecde7c7200~mv2.jpeg" },
+      { "name": "Mr. Sam Lawe", "title": "Infrastructure Manager, APAC", "affiliation": "Navico Group, Auckland", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_485133b243e34681b345c2286ad708b2~mv2.jpeg" },
+      { "name": "Mrs. Meryem Gurel", "title": "Founder, Point Energy Intelligence Services", "affiliation": "Istanbul, Turkey", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_6346862f510f41209c68b590a9da5215~mv2.jpeg" },
+      { "name": "Katarzyna Antosz", "title": "Associate Professor", "affiliation": "Rzeszow University of Technology, Poland", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_d511f14d64114d2785f3aa065a35cbb9~mv2.jpeg" },
+      { "name": "Dr. Nilesh Vitthal Limbore", "title": "Associate Professor & HOD BBA", "affiliation": "Navsahayadri Group of Institutions, India", "imageUrl": "/assets/ICCINET-25%20_%20Eminsphere_files/30814e_a4b6a0348dd3456e9360bd662904b62b~mv2.jpeg" }
     ],
     "awards": [
       { "title": "Best Paper Award", "desc": "Recognizes outstanding contributions in research and innovation." },
@@ -607,21 +615,21 @@ export const recentConferences: Record<string, RecentConferenceData> = {
       "affiliation": "Maharashtra, India"
     },
     "keynoteSpeakers": [
-      { "name": "Dr. Ratnaraja Kumar Jambi", "title": "Conference Convener", "affiliation": "Principal, G. S. Moze College of Engineering" },
-      { "name": "Prof. Deepak K. Sharma", "title": "Conference Co-Convener", "affiliation": "Head of AI&DS and IQAC, G. S. Moze College of Engineering" },
-      { "name": "Dr. Ushadevi Patil", "title": "Conference Co-Convener", "affiliation": "Dean of Research and Development, G. S. Moze College of Engineering" }
+      { "name": "Dr. Ratnaraja Kumar Jambi", "title": "Conference Convener", "affiliation": "Principal, G. S. Moze College of Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_08cd4957e7c24c5593fb00d3cb522d13~mv2.jpg" },
+      { "name": "Prof. Deepak K. Sharma", "title": "Conference Co-Convener", "affiliation": "Head of AI&DS and IQAC, G. S. Moze College of Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_2784fc706fb341c38099bb57b0967cb0~mv2.jpg" },
+      { "name": "Dr. Ushadevi Patil", "title": "Conference Co-Convener", "affiliation": "Dean of Research and Development, G. S. Moze College of Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_f3fd7d1c0ecd45c196c0c57c97edba07~mv2.jpg" }
     ],
     "conferenceExperts": [
-      { "name": "Prof. Sai Sudha", "title": "H.O.D", "affiliation": "Computer Engineering" },
-      { "name": "Prof. Sana Shaikh", "title": "H.O.D", "affiliation": "Information Technology" },
-      { "name": "Prof. Deepak K. Sharma", "title": "H.O.D", "affiliation": "AI & DS" },
-      { "name": "Prof. Pallavi Patil", "title": "H.O.D", "affiliation": "AI & ML" },
-      { "name": "Prof. Sushma Rathawardhan", "title": "H.O.D", "affiliation": "E&TC" },
-      { "name": "Prof. Seema Sheilykar", "title": "H.O.D", "affiliation": "Civil Engineering" },
-      { "name": "Dr. Santosh Sandanshiv", "title": "H.O.D", "affiliation": "Mechanical Engineering" },
-      { "name": "Prof. Dhananjay Alagavadi", "title": "H.O.D", "affiliation": "First Year Engineering" },
-      { "name": "Prof. Deepak Kulkarni", "title": "H.O.D", "affiliation": "MBA" },
-      { "name": "Prof. Mukta Deshpande", "title": "H.O.D", "affiliation": "MCA" }
+      { "name": "Prof. Sai Sudha", "title": "H.O.D", "affiliation": "Computer Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_af3362f5932045c7ad2cb4bba61279b1~mv2.jpg" },
+      { "name": "Prof. Sana Shaikh", "title": "H.O.D", "affiliation": "Information Technology", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_bb389359ae8c4385886650907f3422f3~mv2.jpg" },
+      { "name": "Prof. Deepak K. Sharma", "title": "H.O.D", "affiliation": "AI & DS", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_533febda40974a9ab0ee0c71b43481ba~mv2.jpg" },
+      { "name": "Prof. Pallavi Patil", "title": "H.O.D", "affiliation": "AI & ML", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_74416773f2f64d1cab82cd0ad8edb6b7~mv2.jpg" },
+      { "name": "Prof. Sushma Rathawardhan", "title": "H.O.D", "affiliation": "E&TC", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_145151a8ba384dc59e96d829f4ccb9ccf000.jpg" },
+      { "name": "Prof. Seema Sheilykar", "title": "H.O.D", "affiliation": "Civil Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_7410938484bc40e9a11c6254db663a5a~mv2.jpg" },
+      { "name": "Dr. Santosh Sandanshiv", "title": "H.O.D", "affiliation": "Mechanical Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/174857.png" },
+      { "name": "Prof. Dhananjay Alagavadi", "title": "H.O.D", "affiliation": "First Year Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/190411.png" },
+      { "name": "Prof. Deepak Kulkarni", "title": "H.O.D", "affiliation": "MBA", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/201623.png" },
+      { "name": "Prof. Mukta Deshpande", "title": "H.O.D", "affiliation": "MCA", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/2278992.png" }
     ],
     "importantDates": [
       { "label": "Conference Dates", "date": "24-25 April 2025" },
@@ -666,21 +674,21 @@ export const recentConferences: Record<string, RecentConferenceData> = {
       "affiliation": "Maharashtra, India"
     },
     "keynoteSpeakers": [
-      { "name": "Dr. Ratnaraja Kumar Jambi", "title": "Conference Convener", "affiliation": "Principal, G. S. Moze College of Engineering" },
-      { "name": "Prof. Deepak K. Sharma", "title": "Conference Co-Convener", "affiliation": "Head of AI&DS and IQAC, G. S. Moze College of Engineering" },
-      { "name": "Dr. Ushadevi Patil", "title": "Conference Co-Convener", "affiliation": "Dean of Research and Development, G. S. Moze College of Engineering" }
+      { "name": "Dr. Ratnaraja Kumar Jambi", "title": "Conference Convener", "affiliation": "Principal, G. S. Moze College of Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_08cd4957e7c24c5593fb00d3cb522d13~mv2.jpg" },
+      { "name": "Prof. Deepak K. Sharma", "title": "Conference Co-Convener", "affiliation": "Head of AI&DS and IQAC, G. S. Moze College of Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_2784fc706fb341c38099bb57b0967cb0~mv2.jpg" },
+      { "name": "Dr. Ushadevi Patil", "title": "Conference Co-Convener", "affiliation": "Dean of Research and Development, G. S. Moze College of Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_f3fd7d1c0ecd45c196c0c57c97edba07~mv2.jpg" }
     ],
     "conferenceExperts": [
-      { "name": "Prof. Sai Sudha", "title": "H.O.D", "affiliation": "Computer Engineering" },
-      { "name": "Prof. Sana Shaikh", "title": "H.O.D", "affiliation": "Information Technology" },
-      { "name": "Prof. Deepak K. Sharma", "title": "H.O.D", "affiliation": "AI & DS" },
-      { "name": "Prof. Pallavi Patil", "title": "H.O.D", "affiliation": "AI & ML" },
-      { "name": "Prof. Sushma Rathawardhan", "title": "H.O.D", "affiliation": "E&TC" },
-      { "name": "Prof. Seema Sheilykar", "title": "H.O.D", "affiliation": "Civil Engineering" },
-      { "name": "Dr. Santosh Sandanshiv", "title": "H.O.D", "affiliation": "Mechanical Engineering" },
-      { "name": "Prof. Dhananjay Alagavadi", "title": "H.O.D", "affiliation": "First Year Engineering" },
-      { "name": "Prof. Deepak Kulkarni", "title": "H.O.D", "affiliation": "MBA" },
-      { "name": "Prof. Mukta Deshpande", "title": "H.O.D", "affiliation": "MCA" }
+      { "name": "Prof. Sai Sudha", "title": "H.O.D", "affiliation": "Computer Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_af3362f5932045c7ad2cb4bba61279b1~mv2.jpg" },
+      { "name": "Prof. Sana Shaikh", "title": "H.O.D", "affiliation": "Information Technology", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_bb389359ae8c4385886650907f3422f3~mv2.jpg" },
+      { "name": "Prof. Deepak K. Sharma", "title": "H.O.D", "affiliation": "AI & DS", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_533febda40974a9ab0ee0c71b43481ba~mv2.jpg" },
+      { "name": "Prof. Pallavi Patil", "title": "H.O.D", "affiliation": "AI & ML", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_74416773f2f64d1cab82cd0ad8edb6b7~mv2.jpg" },
+      { "name": "Prof. Sushma Rathawardhan", "title": "H.O.D", "affiliation": "E&TC", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_145151a8ba384dc59e96d829f4ccb9ccf000.jpg" },
+      { "name": "Prof. Seema Sheilykar", "title": "H.O.D", "affiliation": "Civil Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_7410938484bc40e9a11c6254db663a5a~mv2.jpg" },
+      { "name": "Dr. Santosh Sandanshiv", "title": "H.O.D", "affiliation": "Mechanical Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/174857.png" },
+      { "name": "Prof. Dhananjay Alagavadi", "title": "H.O.D", "affiliation": "First Year Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/190411.png" },
+      { "name": "Prof. Deepak Kulkarni", "title": "H.O.D", "affiliation": "MBA", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/201623.png" },
+      { "name": "Prof. Mukta Deshpande", "title": "H.O.D", "affiliation": "MCA", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/2278992.png" }
     ],
     "importantDates": [
       { "label": "Conference Dates", "date": "24-25 April 2025" },
@@ -725,21 +733,21 @@ export const recentConferences: Record<string, RecentConferenceData> = {
       "affiliation": "Maharashtra, India"
     },
     "keynoteSpeakers": [
-      { "name": "Dr. Ratnaraja Kumar Jambi", "title": "Conference Convener", "affiliation": "Principal, G. S. Moze College of Engineering" },
-      { "name": "Prof. Deepak K. Sharma", "title": "Conference Co-Convener", "affiliation": "Head of AI&DS and IQAC, G. S. Moze College of Engineering" },
-      { "name": "Dr. Ushadevi Patil", "title": "Conference Co-Convener", "affiliation": "Dean of Research and Development, G. S. Moze College of Engineering" }
+      { "name": "Dr. Ratnaraja Kumar Jambi", "title": "Conference Convener", "affiliation": "Principal, G. S. Moze College of Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_08cd4957e7c24c5593fb00d3cb522d13~mv2.jpg" },
+      { "name": "Prof. Deepak K. Sharma", "title": "Conference Co-Convener", "affiliation": "Head of AI&DS and IQAC, G. S. Moze College of Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_2784fc706fb341c38099bb57b0967cb0~mv2.jpg" },
+      { "name": "Dr. Ushadevi Patil", "title": "Conference Co-Convener", "affiliation": "Dean of Research and Development, G. S. Moze College of Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_f3fd7d1c0ecd45c196c0c57c97edba07~mv2.jpg" }
     ],
     "conferenceExperts": [
-      { "name": "Prof. Sai Sudha", "title": "H.O.D", "affiliation": "Computer Engineering" },
-      { "name": "Prof. Sana Shaikh", "title": "H.O.D", "affiliation": "Information Technology" },
-      { "name": "Prof. Deepak K. Sharma", "title": "H.O.D", "affiliation": "AI & DS" },
-      { "name": "Prof. Pallavi Patil", "title": "H.O.D", "affiliation": "AI & ML" },
-      { "name": "Prof. Sushma Rathawardhan", "title": "H.O.D", "affiliation": "E&TC" },
-      { "name": "Prof. Seema Sheilykar", "title": "H.O.D", "affiliation": "Civil Engineering" },
-      { "name": "Dr. Santosh Sandanshiv", "title": "H.O.D", "affiliation": "Mechanical Engineering" },
-      { "name": "Prof. Dhananjay Alagavadi", "title": "H.O.D", "affiliation": "First Year Engineering" },
-      { "name": "Prof. Deepak Kulkarni", "title": "H.O.D", "affiliation": "MBA" },
-      { "name": "Prof. Mukta Deshpande", "title": "H.O.D", "affiliation": "MCA" }
+      { "name": "Prof. Sai Sudha", "title": "H.O.D", "affiliation": "Computer Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_af3362f5932045c7ad2cb4bba61279b1~mv2.jpg" },
+      { "name": "Prof. Sana Shaikh", "title": "H.O.D", "affiliation": "Information Technology", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_bb389359ae8c4385886650907f3422f3~mv2.jpg" },
+      { "name": "Prof. Deepak K. Sharma", "title": "H.O.D", "affiliation": "AI & DS", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_533febda40974a9ab0ee0c71b43481ba~mv2.jpg" },
+      { "name": "Prof. Pallavi Patil", "title": "H.O.D", "affiliation": "AI & ML", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_74416773f2f64d1cab82cd0ad8edb6b7~mv2.jpg" },
+      { "name": "Prof. Sushma Rathawardhan", "title": "H.O.D", "affiliation": "E&TC", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_145151a8ba384dc59e96d829f4ccb9ccf000.jpg" },
+      { "name": "Prof. Seema Sheilykar", "title": "H.O.D", "affiliation": "Civil Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/30814e_7410938484bc40e9a11c6254db663a5a~mv2.jpg" },
+      { "name": "Dr. Santosh Sandanshiv", "title": "H.O.D", "affiliation": "Mechanical Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/174857.png" },
+      { "name": "Prof. Dhananjay Alagavadi", "title": "H.O.D", "affiliation": "First Year Engineering", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/190411.png" },
+      { "name": "Prof. Deepak Kulkarni", "title": "H.O.D", "affiliation": "MBA", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/201623.png" },
+      { "name": "Prof. Mukta Deshpande", "title": "H.O.D", "affiliation": "MCA", "imageUrl": "/assets/ICAMET%202025%20_%20Eminsphere_files/2278992.png" }
     ],
     "importantDates": [
       { "label": "Conference Dates", "date": "24-25 April 2025" },
